@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-moveipicker-dev-203016-authRole",
+      "UnauthRoleArn": "arn:aws:iam::616676934396:role/amplify-moveipicker-dev-203016-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::616676934396:role/amplify-moveipicker-dev-203016-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-moveipicker-dev-203016-deployment",
+      "UnauthRoleName": "amplify-moveipicker-dev-203016-unauthRole",
+      "StackName": "amplify-moveipicker-dev-203016",
+      "StackId": "arn:aws:cloudformation:us-east-1:616676934396:stack/amplify-moveipicker-dev-203016/71894b50-7286-11ec-bc6b-0a466d31a257",
+      "AmplifyAppId": "dczj0uc3pjkk7"
+    },
+    "categories": {
+      "auth": {
+        "moveipicker76005325": {}
+      }
+    }
+  }
+}
