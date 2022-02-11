@@ -15,7 +15,7 @@ function Login() {
         <View style={styles.container}>
             <Text>{email}</Text>
             <Text>{password}</Text>
-            <InputBox name={'Email'} setValue={setEmail} hidden={false} />
+            <InputBox name={'Email'} icon='email' setValue={setEmail} hidden={false} />
             <InputBox name={'Password'} setValue={setPassword} hidden={true} />
             {/* <TextInput placeholder='Email' style={styles.input} onChangeText={(text) => setEmail(text)} />
             <TextInput placeholder='Password' secureTextEntry style={styles.input} onChangeText={(text) => setPassword(text)} /> */}
