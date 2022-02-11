@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Platform, Text, StyleSheet, TextInput, View } from 'react-native';
 import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
+import InputBox from './InputBox';
 
 function Login() {
 
@@ -12,8 +13,12 @@ function Login() {
 
     return (
         <View style={styles.container}>
-            <TextInput placeholder='Email' style={styles.input} onChangeText={text => setEmail(text)} />
-            <TextInput placeholder='Password' style={styles.input} onChangeText={text => setPassword(text)} />
+            <Text>{email}</Text>
+            <Text>{password}</Text>
+            <InputBox name={'Email'} setValue={setEmail} hidden={false} />
+            <InputBox name={'Password'} setValue={setPassword} hidden={true} />
+            {/* <TextInput placeholder='Email' style={styles.input} onChangeText={(text) => setEmail(text)} />
+            <TextInput placeholder='Password' secureTextEntry style={styles.input} onChangeText={(text) => setPassword(text)} /> */}
         </View>
     );
 }
