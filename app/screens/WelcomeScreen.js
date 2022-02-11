@@ -20,8 +20,6 @@ function WelcomeScreen(props) {
 
     );
 }
-const dimensions = Dimensions.get('window');
-const imageWidth = dimensions.width;
 
 const styles = StyleSheet.create({
     container: {
