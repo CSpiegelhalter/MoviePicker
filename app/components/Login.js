@@ -20,7 +20,7 @@ function Login() {
 
 const styles = StyleSheet.create({
     input: {
-        borderBottomColor:'$ccc',
+        borderBottomColor: '#ccc',
         borderBottomWidth: 1
     },
     container: {
