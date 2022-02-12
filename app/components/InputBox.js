@@ -2,12 +2,13 @@ import React from 'react';
 // import { View, StyleSheet } from 'react-native-web';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { View, StyleSheet, TextInput } from 'react-native';
+import style from '../config/style';
 
 function InputBox({ icon, name, setValue, hidden }) {
     return (
         <View style={styles.container}>
             {icon && <MaterialCommunityIcons name={icon} size={20} color='#4A4847' style={styles.icon} />}
-            <TextInput style={styles.trxtInput} placeholder={name} onChangeText={(text) => setValue(text)} secureTextEntry={hidden} />
+            <TextInput style={style.text} placeholder={name} onChangeText={(text) => setValue(text)} secureTextEntry={hidden} />
         </View>
     );
 }
