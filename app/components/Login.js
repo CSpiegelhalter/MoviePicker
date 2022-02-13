@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Platform, Text, StyleSheet, TextInput, View } from 'react-native';
+import Button from '../components/Button';
 import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 import InputBox from './InputBox';
+import colors from '../config/colors';
 
 function Login() {
 
@@ -13,12 +15,18 @@ function Login() {
 
     return (
         <View style={styles.container}>
-            <Text>{email}</Text>
-            <Text>{password}</Text>
-            <InputBox name={'Email'} icon='email' setValue={setEmail} hidden={false} />
-            <InputBox name={'Password'} setValue={setPassword} hidden={true} />
-            {/* <TextInput placeholder='Email' style={styles.input} onChangeText={(text) => setEmail(text)} />
+            <View style={styles.inputs}>
+                <Text>{email}</Text>
+                <Text>{password}</Text>
+                <InputBox  textContentType='emailAddress' autoCapitalize="none" autoCorrect={false} keyboardType='email-address' name={'Email'} icon='email' setValue={setEmail} hidden={false} />
+                <InputBox textContentType='password' autoCapitalize='none' autoCorrect={false} name={'Password'} setValue={setPassword} icon='lock' hidden={true} />
+            </View>
+            <View style={styles.buttons}>
+                <Button title="Login" color={colors.tertiary} onPress={() => console.log(email, password)} />
+                <Button title="Sign-up" color={colors.tertiary} onPress={() => console.log('pressed sign up')} />
+                {/* <TextInput placeholder='Email' style={styles.input} onChangeText={(text) => setEmail(text)} />
             <TextInput placeholder='Password' secureTextEntry style={styles.input} onChangeText={(text) => setPassword(text)} /> */}
+            </View>
         </View>
     );
 }
@@ -28,21 +36,25 @@ const styles = StyleSheet.create({
         borderBottomColor: '#ccc',
         borderBottomWidth: 1
     },
-    container: {
-        flex: 1,
-        backgroundColor:'rgba(255,255,255,0.8)',
-        width: '95%',
-        // height: '10%',
-        marginTop: 70,
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 1 },
-        shadowOpacity: 0.8,
-        shadowRadius: 2,  
-        justifyContent: 'center',
+    buttons: {
+        width: '100%',
         alignItems: 'center',
-        borderRadius: 25,
-        // opacity: 0.5,
-        elevation: 5
+        paddingBottom: 50
+    },
+    inputs: {
+        width: '100%',
+        height: '35%',
+        alignItems: 'center',
+        marginTop: 150
+        // bottom: 0
+    },
+    container: {
+        width: '100%',
+        height: '100%',
+        flex: 1,
+        alignItems: 'center',
+        // flexDirection: 'row'
+        justifyContent: 'space-between'
     }
 })
 

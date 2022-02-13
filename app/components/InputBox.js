@@ -18,18 +18,17 @@ const styles = StyleSheet.create({
         backgroundColor: '#F8F3EE',
         borderRadius: 25,
         flexDirection: 'row',
+        flex: 1,
+        // justifyContent:'center',
+        alignItems: 'center',
         width: '95%',
         padding: 15,
         marginVertical: 10
     },
     icon: {
         marginRight: 10,
+        margin: 'auto'
         
-    },
-    textInput: {
-        fontSize: 18,
-        color: '#0c0c0c'
-        // fontFamily: 
     }
 })
 
