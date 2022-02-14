@@ -6,6 +6,7 @@ import InputBox from './InputBox';
 import colors from '../config/colors';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+import AppText from './AppText';
 
 const validationSchema = Yup.object().shape({
     email = Yup.string().required().email().label('Email'),
@@ -24,7 +25,7 @@ function Login() {
                 onSubmit={(values) => console.log(values)}
                 validationSchema={validationSchema}
             >
-                {({ handleChange, handleSubmit }) => (
+                {({ handleChange, handleSubmit, errors }) => (
                     <>
                         <View style={styles.inputs}>
                             <Text>{email}</Text>
@@ -39,6 +40,7 @@ function Login() {
                                 hidden={false}
                                 onChange={handleChange('email')}
                             />
+                            <AppText style={{color: 'red'}}>{errors.email}</AppText>
                             <InputBox
                                 textContentType='password'
                                 autoCapitalize='none'
@@ -48,6 +50,7 @@ function Login() {
                                 hidden={true}
                                 onChange={handleChange('password')}
                             />
+                             <AppText style={{color: 'red'}}>{errors.password}</AppText>
                         </View>
                         <View style={styles.buttons}>
                             <Button title="Login" color={colors.tertiary} onPress={handleSubmit} />
