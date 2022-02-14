@@ -8,7 +8,10 @@ function InputBox({ icon, name, setValue, hidden }) {
     return (
         <View style={styles.container}>
             {icon && <MaterialCommunityIcons name={icon} size={20} color='#4A4847' style={styles.icon} />}
-            <TextInput style={style.text} placeholder={name} onChangeText={(text) => setValue(text)} secureTextEntry={hidden} />
+            <TextInput 
+            style={style.text} 
+            placeholder={name} 
+            secureTextEntry={hidden} />
         </View>
     );
 }

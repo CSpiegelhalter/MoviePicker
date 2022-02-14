@@ -4,6 +4,7 @@ import Button from '../components/Button';
 import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 import InputBox from './InputBox';
 import colors from '../config/colors';
+import { Formik } from 'formik'
 
 function Login() {
 
@@ -15,18 +16,48 @@ function Login() {
 
     return (
         <View style={styles.container}>
-            <View style={styles.inputs}>
-                <Text>{email}</Text>
-                <Text>{password}</Text>
-                <InputBox  textContentType='emailAddress' autoCapitalize="none" autoCorrect={false} keyboardType='email-address' name={'Email'} icon='email' setValue={setEmail} hidden={false} />
-                <InputBox textContentType='password' autoCapitalize='none' autoCorrect={false} name={'Password'} setValue={setPassword} icon='lock' hidden={true} />
-            </View>
-            <View style={styles.buttons}>
-                <Button title="Login" color={colors.tertiary} onPress={() => console.log(email, password)} />
-                <Button title="Sign-up" color={colors.tertiary} onPress={() => console.log('pressed sign up')} />
-                {/* <TextInput placeholder='Email' style={styles.input} onChangeText={(text) => setEmail(text)} />
+
+            <Formik
+                initialValues={{ email: '', password: '' }}
+                onSubmit={(values) => console.log(values)}
+            >
+                {({ handleChange, handleSubmit }) => (
+                    <>
+                        <View style={styles.inputs}>
+                            <Text>{email}</Text>
+                            <Text>{password}</Text>
+                            <InputBox
+                                textContentType='emailAddress'
+                                autoCapitalize="none"
+                                autoCorrect={false}
+                                keyboardType='email-address'
+                                name={'Email'}
+                                icon='email'
+                                hidden={false}
+                                onChange={handleChange('email')}
+                            />
+                            <InputBox
+                                textContentType='password'
+                                autoCapitalize='none'
+                                autoCorrect={false}
+                                name={'Password'}
+                                icon='lock'
+                                hidden={true}
+                                onChange={handleChange('password')}
+                            />
+                        </View>
+                        <View style={styles.buttons}>
+                            <Button title="Login" color={colors.tertiary} onPress={handleSubmit} />
+                            <Button title="Sign-up" color={colors.tertiary}  />
+                        </View>
+                    </>
+                )}
+            </Formik>
+
+
+            {/* <TextInput placeholder='Email' style={styles.input} onChangeText={(text) => setEmail(text)} />
             <TextInput placeholder='Password' secureTextEntry style={styles.input} onChangeText={(text) => setPassword(text)} /> */}
-            </View>
+
         </View>
     );
 }
