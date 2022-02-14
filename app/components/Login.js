@@ -4,14 +4,16 @@ import Button from '../components/Button';
 import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
 import InputBox from './InputBox';
 import colors from '../config/colors';
-import { Formik } from 'formik'
+import { Formik } from 'formik';
+import * as Yup from 'yup';
+
+const validationSchema = Yup.object().shape({
+    email = Yup.string().required().email().label('Email'),
+    password = Yup.string().required().min(4).label('Password')
+});
+
 
 function Login() {
-
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-
-
 
 
     return (
@@ -20,6 +22,7 @@ function Login() {
             <Formik
                 initialValues={{ email: '', password: '' }}
                 onSubmit={(values) => console.log(values)}
+                validationSchema={validationSchema}
             >
                 {({ handleChange, handleSubmit }) => (
                     <>
