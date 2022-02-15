@@ -1,15 +1,15 @@
 import React from 'react';
 import { Platform, Text, StyleSheet } from 'react-native';
-import style from '../config/style';
+import defaultStyle from '../config/defaultStyle';
 
 function AppText({children}) {
     return (
-        <Text style={style.text}>{children}</Text>
+        <Text style={defaultStyle.text} >{children}</Text>
     );
 }
 
-const styles = StyleSheet.create({
+// const styles = StyleSheet.create({
 
-})
+// })
 
 export default AppText;

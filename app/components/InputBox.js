@@ -2,15 +2,20 @@ import React from 'react';
 // import { View, StyleSheet } from 'react-native-web';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { View, StyleSheet, TextInput } from 'react-native';
-import style from '../config/style';
+import style from '../config/defaultStyle';
 
-function InputBox({ icon, name, setValue, hidden }) {
+function InputBox({ icon, name, setValue, hidden, value, change, textContentType, autoCapitalize, autoCorrect }) {
     return (
         <View style={styles.container}>
             {icon && <MaterialCommunityIcons name={icon} size={20} color='#4A4847' style={styles.icon} />}
             <TextInput 
             style={style.text} 
+            textContentType={textContentType}
+            autoCapitalize={autoCapitalize}
             placeholder={name} 
+            autoCorrect={autoCorrect}
+            onChangeText={change}
+            value={value}
             secureTextEntry={hidden} />
         </View>
     );
