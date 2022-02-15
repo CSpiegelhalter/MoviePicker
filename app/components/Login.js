@@ -1,28 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Platform, Text, StyleSheet, TextInput, View } from 'react-native';
 import Button from '../components/Button';
-import { backgroundColor } from 'react-native/Libraries/Components/View/ReactNativeStyleAttributes';
-import InputBox from './InputBox';
 import colors from '../config/colors';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
-import ErrorMessage from './ErrorMessage';
-import AppText from './AppText';
-
-const passwordNotLongEnough = 'password must be at least 8 characters'
-const invalidEmail = 'email must be a valid email'
 
 
 const validationSchema = Yup.object().shape({
     email: Yup.string()
-        .email('email must be a valid email')
+        .email('Must be a valid email')
         .required('Must have an email')
-
         .label('Email'),
     password: Yup.string()
         .required('Must have a password')
-        .min(4, passwordNotLongEnough)
+        .min(4, 'Password must be at least 8 characters')
         .label('Password')
 });
 
@@ -51,14 +43,11 @@ function Login(props) {
                                     autoCorrect={false}
                                     keyboardType='email-address'
                                     name='Email'
-                                    // icon='email'
-                                    // hidden={false}
                                     onChangeText={handleChange('email')}
                                     value={values.email}
                                 />
                             </View>
-                            {/* <ErrorMessage error={errors.email}/>
-                             */}
+                       
                             {errors.email ?
                                 <Text style={{ fontSize: 18, color: 'yellow' }}>{errors.email}</Text> : null
                             }
@@ -75,8 +64,7 @@ function Login(props) {
                                     value={values.password}
                                 />
                             </View>
-                            {/* <AppText style={{color: "white"}}>{errors.password}</AppText> */}
-                            {/* <ErrorMessage error={errors.password}/> */}
+                       
                             {errors.password ?
                                 <Text style={{ fontSize: 18, color: 'yellow' }} >{errors.password}</Text> : null
                             }
@@ -89,10 +77,6 @@ function Login(props) {
                 )}
             </Formik>
 
-
-            {/* <TextInput placeholder='Email' style={styles.input} onChangeText={(text) => setEmail(text)} />
-            <TextInput placeholder='Password' secureTextEntry style={styles.input} onChangeText={(text) => setPassword(text)} /> */}
-
         </View>
     );
 }
@@ -103,7 +87,6 @@ const styles = StyleSheet.create({
         borderRadius: 25,
         flexDirection: 'row',
         flex: 1,
-        // position: 'absolute',
         alignItems: 'center',
         width: '95%',
         padding: 15,
@@ -125,19 +108,16 @@ const styles = StyleSheet.create({
     },
     inputs: {
         flex:1,
-        // flexDirection: 'row',
         width: '100%',
         height: '80%',
         alignItems: 'center',
         marginTop: 150
-        // bottom: 0
     },
     container: {
         width: '100%',
         height: '100%',
         flex: 1,
         alignItems: 'center',
-        // flexDirection: 'row'
         justifyContent: 'space-between'
     }
 })
