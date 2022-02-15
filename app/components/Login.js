@@ -14,21 +14,21 @@ const passwordNotLongEnough = 'password must be at least 8 characters'
 const invalidEmail = 'email must be a valid email'
 
 
+const validationSchema = Yup.object().shape({
+    email: Yup.string()
+        .email('email must be a valid email')
+        .required('Must have an email')
 
+        .label('Email'),
+    password: Yup.string()
+        .required('Must have a password')
+        .min(4, passwordNotLongEnough)
+        .label('Password')
+});
 
 
 function Login(props) {
-    const validationSchema = Yup.object().shape({
-        email: Yup.string()
-            .email('email must be a valid email')
-            .required('Must have an email')
 
-            .label('Email'),
-        password: Yup.string()
-            .required('Must have a password')
-            .min(4, passwordNotLongEnough)
-            .label('Password')
-    });
 
 
     return (
@@ -38,7 +38,7 @@ function Login(props) {
                 enableReinitialize={true}
                 initialValues={{ email: "", password: "" }}
                 onSubmit={(values) => console.log(values)}
-                validator={() => ({})}
+                validationSchema={validationSchema}
             >
                 {({ handleChange, handleSubmit, errors, values }) => (
                     <>
@@ -50,7 +50,7 @@ function Login(props) {
                                     autoCapitalize="none"
                                     autoCorrect={false}
                                     keyboardType='email-address'
-                                    // name='Email'
+                                    name='Email'
                                     // icon='email'
                                     // hidden={false}
                                     onChangeText={handleChange('email')}
