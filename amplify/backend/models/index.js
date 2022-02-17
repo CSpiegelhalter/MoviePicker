@@ -4,10 +4,13 @@ const path = require('path');
 const Sequelize = require('sequelize');
 const basename = path.basename(__filename);
 const env = process.env.NODE_ENV || 'development';
-const config = require(__dirname + '/../config/config.js')[env];
-
+const mysql = require('mysql2')
+// const config = require('../config/config.js');
+const config = require('../config/config')
+console.log();
 // var config = require(__dirname + '/../config/config.json')[env];
  // your config file will be in your directory
+ console.log(config);
  var sequelize = new Sequelize(config.database, config.username, config.password, {
     host: config.host,
     port: 3306,
@@ -15,7 +18,8 @@ const config = require(__dirname + '/../config/config.js')[env];
     maxConcurrentQueries: 100,
     dialect: 'mysql',
     dialectOptions: {
-        ssl:'Amazon RDS'
+        ssl:'Amazon RDS',
+        ssl: { rejectUnauthorized: false }
     },
     pool: { maxConnections: 5, maxIdleTime: 30},
     language: 'en'

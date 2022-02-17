@@ -1,5 +1,5 @@
-const bcrypt = require('bcrypt-nodejs');
-const db = require('../../index').db;
+// const bcrypt = require('bcrypt-nodejs');
+// const db = require('../index');
 
 const user = (sequelize, DataTypes) => {
   const User = sequelize.define(

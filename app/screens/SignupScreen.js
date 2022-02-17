@@ -1,23 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Image, ImageBackground, StyleSheet, View } from 'react-native';
 import Signup from '../components/Signup';
-import Login from '../components/Login'
 import Screen from '../components/Screen';
 
 
-function WelcomeScreen(props) {
-    // const [needSignup, setneedSignup] = useState(false)
-    // useEffect(() => {
-    //     console.log(needSignup);
-    // }, [])
-    let toggle = false
-
-    function toggler() {
-        console.log('getting called');
-        toggle = !toggle
-        console.log(toggle);
-    }
-
+function SignupScreen(props) {
     return (
         <>
             <Image style={styles.popcorn} source={require('../assets/popcornLogo.png')}></Image>
@@ -25,10 +12,7 @@ function WelcomeScreen(props) {
                 <ImageBackground blurRadius={0} style={styles.background} source={require('../assets/background.jpg')}>
                     <Screen >
                         <View style={styles.buttonContainer}>
-                            {
-                                toggle ? <Signup toggler={toggler} /> : <Login toggler={toggler} />
-                            }
-                            
+                            <Signup />
                         </View>
                     </Screen>
                 </ImageBackground>
@@ -83,4 +67,4 @@ const styles = StyleSheet.create({
 
     }
 })
-export default WelcomeScreen;
+export default SignupScreen;

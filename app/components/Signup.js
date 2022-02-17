@@ -7,7 +7,7 @@ import * as Yup from 'yup';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { FontAwesome5 } from '@expo/vector-icons';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-
+import { useNavigation } from '@react-navigation/native';
 
 const validationSchema = Yup.object().shape({
     email: Yup.string()
@@ -24,18 +24,19 @@ const validationSchema = Yup.object().shape({
 });
 
 
-function Signup(props) {
-
+function Signup() {
+    const navigation = useNavigation();
 
 
     return (
+        <>
         <KeyboardAwareScrollView  contentContainerStyle={{flex: 1,
             justifyContent: 'space-around',
             alignItems: 'center',
             width: null,
             height: null,}}>
         <View style={styles.container}>
-
+            <Button onPress={() => navigation.navigate("Login")}></Button>
             <Formik
                 enableReinitialize={true}
                 initialValues={{ email: "", password: "", username: "" }}
@@ -115,6 +116,7 @@ function Signup(props) {
 
         </View>
         </KeyboardAwareScrollView>
+        </>
     );
 }
 

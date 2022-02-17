@@ -5,6 +5,7 @@ import colors from '../config/colors';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { useNavigation } from '@react-navigation/native';
 
 
 const validationSchema = Yup.object().shape({
@@ -19,67 +20,70 @@ const validationSchema = Yup.object().shape({
 });
 
 
-function Login(props) {
 
 
+function Login() {
+    const navigation = useNavigation();
 
     return (
-        <View style={styles.container}>
+        <>
+            <View style={styles.container}>
 
-            <Formik
-                enableReinitialize={true}
-                initialValues={{ email: "", password: "" }}
-                onSubmit={(values) => console.log(values)}
-                validationSchema={validationSchema}
-            >
-                {({ handleChange, handleSubmit, errors, values, setFieldTouched, touched }) => (
-                    <>
-                        <View style={styles.inputs}>
-                            <View style={styles.inputWrapper}>
-                                <MaterialCommunityIcons name={'email'} size={20} color='#4A4847' style={styles.icon} />
-                                <TextInput
-                                    textContentType='emailAddress'
-                                    autoCapitalize="none"
-                                    autoCorrect={false}
-                                    keyboardType='email-address'
-                                    name='Email'
-                                    onChangeText={handleChange('email')}
-                                    value={values.email}
-                                    onBlur={() => setFieldTouched('email')}
-                                />
-                            </View>
-                       
-                            {errors.email && touched.email ?
-                                <Text style={{ fontSize: 18, color: 'yellow' }}>{errors.email}</Text> : null
-                            }
-                            <View style={styles.inputWrapper}>
-                                <MaterialCommunityIcons name={'lock'} size={20} color='#4A4847' style={styles.icon} />
-                                <TextInput
-                                    textContentType='password'
-                                    autoCapitalize='none'
-                                    autoCorrect={false}
-                                    name='Password'
-                                    icon='lock'
-                                    hidden={true}
-                                    onChangeText={handleChange('password')}
-                                    value={values.password}
-                                    onBlur={() => setFieldTouched('password')}
-                                />
-                            </View>
-                       
-                            {errors.password && touched.password ?
-                                <Text style={{ fontSize: 18, color: 'yellow' }} >{errors.password}</Text> : null
-                            }
-                        </View>
-                        <View style={styles.buttons}>
-                            <Button title="Login" color={colors.tertiary} onPress={handleSubmit} />
-                            <Button title="Sign-up" color={colors.tertiary} />
-                        </View>
-                    </>
-                )}
-            </Formik>
+                <Formik
+                    // enableReinitialize={true}
+                    initialValues={{ email: "", password: "" }}
+                    onSubmit={(values) => console.log(values)}
+                    validationSchema={validationSchema}
+                >
+                    {({ handleChange, handleSubmit, errors, values, setFieldTouched, touched }) => (
+                        <>
+                            <View style={styles.inputs}>
+                                <View style={styles.inputWrapper}>
+                                    <MaterialCommunityIcons name={'email'} size={20} color='#4A4847' style={styles.icon} />
+                                    <TextInput
+                                        textContentType='emailAddress'
+                                        autoCapitalize="none"
+                                        autoCorrect={false}
+                                        keyboardType='email-address'
+                                        name='Email'
+                                        onChangeText={handleChange('email')}
+                                        value={values.email}
+                                        onBlur={() => setFieldTouched('email')}
+                                    />
+                                </View>
 
-        </View>
+                                {errors.email && touched.email ?
+                                    <Text style={{ fontSize: 18, color: 'yellow' }}>{errors.email}</Text> : null
+                                }
+                                <View style={styles.inputWrapper}>
+                                    <MaterialCommunityIcons name={'lock'} size={20} color='#4A4847' style={styles.icon} />
+                                    <TextInput
+                                        textContentType='password'
+                                        autoCapitalize='none'
+                                        autoCorrect={false}
+                                        name='Password'
+                                        icon='lock'
+                                        hidden={true}
+                                        onChangeText={handleChange('password')}
+                                        value={values.password}
+                                        onBlur={() => setFieldTouched('password')}
+                                    />
+                                </View>
+
+                                {errors.password && touched.password ?
+                                    <Text style={{ fontSize: 18, color: 'yellow' }} >{errors.password}</Text> : null
+                                }
+                            </View>
+                            <View style={styles.buttons}>
+                                <Button title="Login" color={colors.tertiary} onPress={handleSubmit} />
+                                <Button title="Sign-up" color={colors.tertiary} onPress={() => navigation.navigate("Signup")} />
+                            </View>
+                        </>
+                    )}
+                </Formik>
+
+            </View>
+        </>
     );
 }
 
@@ -109,7 +113,7 @@ const styles = StyleSheet.create({
         paddingBottom: 50
     },
     inputs: {
-        flex:1,
+        flex: 1,
         width: '100%',
         height: '80%',
         alignItems: 'center',

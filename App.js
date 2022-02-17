@@ -1,12 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import WelcomeScreen from './app/screens/WelcomeScreen';
+import Routes from './app/screens/Routes';
 // import AppText from './app/components/AppText';
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <WelcomeScreen />
+      <Routes />
     </View>
   );
 }
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
+    // alignItems: 'center',
     justifyContent: 'center',
   },
 });
