@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "paths": {
+    "/netflixmovies": {
+      "name": "/netflixmovies",
+      "lambdaFunction": "netflixmoviefunction",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

@@ -7,10 +7,7 @@ const env = process.env.NODE_ENV || 'development';
 const mysql = require('mysql2')
 // const config = require('../config/config.js');
 const config = require('../config/config')
-console.log();
-// var config = require(__dirname + '/../config/config.json')[env];
- // your config file will be in your directory
- console.log(config);
+
  var sequelize = new Sequelize(config.database, config.username, config.password, {
     host: config.host,
     port: 3306,
@@ -25,6 +22,29 @@ console.log();
     language: 'en'
 })
 let db = {};
+
+
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+
+db.user = require("./rest/user")(sequelize, Sequelize);
+db.netflixMovies = require("./rest/netflixMovies")(sequelize, Sequelize);
+
+db.sequelize.authenticate().then(() => {
+  console.log("Connected to the database!");
+})
+.catch(err => {
+  console.log("Cannot connect to the database!", err);
+  process.exit();
+});
+
+
+// sync
+db.sequelize.sync()
+module.exports = db;
+
+
+
 
 
 
@@ -71,19 +91,3 @@ let db = {};
 //     db[modelName].associate(db);
 //   }
 // });
-db.Sequelize = Sequelize;
-db.sequelize = sequelize;
-
-db.user = require("./rest/user")(sequelize, Sequelize);
-
-db.sequelize.authenticate().then(() => {
-  console.log("Connected to the database!");
-})
-.catch(err => {
-  console.log("Cannot connect to the database!", err);
-  process.exit();
-});
-
-// sync
-db.sequelize.sync()
-module.exports = db;

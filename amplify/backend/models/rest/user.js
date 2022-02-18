@@ -11,7 +11,6 @@ const user = (sequelize, DataTypes) => {
     }
   );
 
-  // User.beforeCreate((user, options) => {
   //   const salt = bcrypt.genSaltSync();
   //   user.password = bcrypt.hashSync(user.password, salt);
   // });

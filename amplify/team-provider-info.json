@@ -14,6 +14,12 @@
     "categories": {
       "auth": {
         "moveipicker76005325": {}
+      },
+      "function": {
+        "netflixmoviefunction": {
+          "deploymentBucketName": "amplify-moveipicker-dev-203016-deployment",
+          "s3Key": "amplify-builds/netflixmoviefunction-79322f4373747561574f-build.zip"
+        }
       }
     }
   }
