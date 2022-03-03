@@ -3,6 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 import Routes from './app/screens/Routes';
 // import AppText from './app/components/AppText';
 
+
+
 export default function App() {
   return (
     <View style={styles.container}>

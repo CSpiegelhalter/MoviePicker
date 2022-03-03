@@ -1,17 +1,6 @@
 export type AmplifyDependentResourcesAttributes = {
-    "auth": {
-        "moveipicker76005325": {
-            "IdentityPoolId": "string",
-            "IdentityPoolName": "string",
-            "UserPoolId": "string",
-            "UserPoolArn": "string",
-            "UserPoolName": "string",
-            "AppClientIDWeb": "string",
-            "AppClientID": "string"
-        }
-    },
     "function": {
-        "netflixmoviefunction": {
+        "netflixmovies": {
             "Name": "string",
             "Arn": "string",
             "Region": "string",
@@ -19,7 +8,7 @@ export type AmplifyDependentResourcesAttributes = {
         }
     },
     "api": {
-        "netflixmovieapi": {
+        "netflixmovies": {
             "RootUrl": "string",
             "ApiName": "string",
             "ApiId": "string"

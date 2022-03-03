@@ -5,6 +5,7 @@ import SignupScreen from './SignupScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'
 import WelcomeScreen from './WelcomeScreen';
+import Genres from '../components/Genres';
 
 const Stack = createNativeStackNavigator();
 const StackNavigator = () => (
@@ -20,6 +21,13 @@ function Routes(props) {
         <>
             <NavigationContainer>
                 <Stack.Navigator>
+                <Stack.Screen
+                        name="Genres"
+                        component={Genres}
+                        options={{
+                            headerShown: false
+                        }}
+                    />
                     <Stack.Screen
                         name="Login"
                         component={LoginScreen}

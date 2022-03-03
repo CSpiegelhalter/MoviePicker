@@ -1,24 +1,26 @@
 {
-  "dev": {
+  "staging": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-moveipicker-dev-203016-authRole",
-      "UnauthRoleArn": "arn:aws:iam::616676934396:role/amplify-moveipicker-dev-203016-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::616676934396:role/amplify-moveipicker-dev-203016-authRole",
+      "AuthRoleName": "amplify-amplify2f501346b37b4-staging-21129-authRole",
+      "UnauthRoleArn": "arn:aws:iam::616676934396:role/amplify-amplify2f501346b37b4-staging-21129-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::616676934396:role/amplify-amplify2f501346b37b4-staging-21129-authRole",
       "Region": "us-east-1",
-      "DeploymentBucketName": "amplify-moveipicker-dev-203016-deployment",
-      "UnauthRoleName": "amplify-moveipicker-dev-203016-unauthRole",
-      "StackName": "amplify-moveipicker-dev-203016",
-      "StackId": "arn:aws:cloudformation:us-east-1:616676934396:stack/amplify-moveipicker-dev-203016/71894b50-7286-11ec-bc6b-0a466d31a257",
+      "DeploymentBucketName": "amplify-amplify2f501346b37b4-staging-21129-deployment",
+      "UnauthRoleName": "amplify-amplify2f501346b37b4-staging-21129-unauthRole",
+      "StackName": "amplify-amplify2f501346b37b4-staging-21129",
+      "StackId": "arn:aws:cloudformation:us-east-1:616676934396:stack/amplify-amplify2f501346b37b4-staging-21129/ea2775d0-944d-11ec-ad7a-0a74dcbf7739",
       "AmplifyAppId": "dczj0uc3pjkk7"
     },
     "categories": {
-      "auth": {
-        "moveipicker76005325": {}
-      },
       "function": {
-        "netflixmoviefunction": {
-          "deploymentBucketName": "amplify-moveipicker-dev-203016-deployment",
-          "s3Key": "amplify-builds/netflixmoviefunction-79322f4373747561574f-build.zip"
+        "netflixmovies": {
+          "database": "moivepicker-dev",
+          "username": "admin",
+          "password": "password",
+          "host": "moivepicker-dev.clgftnbfrrf4.us-east-1.rds.amazonaws.com",
+          "port": "3306",
+          "deploymentBucketName": "amplify-amplify2f501346b37b4-staging-21129-deployment",
+          "s3Key": "amplify-builds/netflixmovies-796f2b344836416b3957-build.zip"
         }
       }
     }

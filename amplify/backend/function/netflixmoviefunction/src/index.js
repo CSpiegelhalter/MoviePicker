@@ -4,13 +4,13 @@ exports.handler = async (event) => {
     // TODO implement
     db.netflixMovies.findAll()
   .then((data) => {
-      return data;
+      return JSON.stringify(data)
     // data.forEach(element => {
     //   console.log(element.toJSON());
-    });
-//   }).catch(err => {
-//     console.log("WHOOPS", err);
-//   });
+     }).catch(err => {
+    console.log("WHOOPS", err);
+  });
+ 
 
 //     const response = {
 //         statusCode: 200,
