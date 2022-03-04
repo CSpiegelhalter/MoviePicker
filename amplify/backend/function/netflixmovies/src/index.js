@@ -47,7 +47,7 @@ db.sequelize = sequelize;
 db.user = require("./rest/user")(sequelize, Sequelize);
 db.netflixMovies = require("./rest/netflixMovies")(sequelize, Sequelize);
 
-await sequelize.authenticate().then(() => {
+await db.sequelize.authenticate().then(() => {
   console.log("Connected to the database!");
 })
 .catch(err => {
@@ -66,7 +66,7 @@ db.sequelize.sync()
  console.log("here perhaps?")
      db.netflixMovies.findAll({
         where: {
-           Id: 2
+           id: 2
           }
      })
          .then((data) => {
