@@ -44,8 +44,8 @@ let db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
-// db.user = require("./rest/user")(sequelize, Sequelize);
-// db.netflixMovies = require("./rest/netflixMovies")(sequelize, Sequelize);
+db.user = require("./rest/user")(sequelize, Sequelize);
+db.netflixMovies = require("./rest/netflixMovies")(sequelize, Sequelize);
 
 await sequelize.authenticate().then(() => {
   console.log("Connected to the database!");
@@ -64,18 +64,18 @@ db.sequelize.sync()
  // module.exports = db;
  
  console.log("here perhaps?")
-    //  db.netflixMovies.findAll({
-    //     where: {
-    //        Id: 2
-    //       }
-    //  })
-    //      .then((data) => {
-    //        console.log("HELOO??????")
-    //        console.log(data)
-    //          return {body: JSON.stringify(data)}
-    //      }).catch(err => {
-    //          console.log("WHOOPS", err);
-    //      })
+     db.netflixMovies.findAll({
+        where: {
+           Id: 2
+          }
+     })
+         .then((data) => {
+           console.log("HELOO??????")
+           console.log(JSON.stringify(data))
+             return JSON.stringify(data)
+         }).catch(err => {
+             console.log("WHOOPS", err);
+         })
     //      console.log('fuckin here')
      // return {
      //     statusCode: 200,

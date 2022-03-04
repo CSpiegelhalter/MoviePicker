@@ -21,7 +21,7 @@ function Genres() {
     onPress = () => {
         API.get('netflixmovies', '/netflixmovies')
             .then((data) => {
-            console.log(data.body)
+            console.log(data)
             // data.forEach((element) => console.log(element))) 
             }).catch((err) => {
                 console.log("Failed", err.response.message);
