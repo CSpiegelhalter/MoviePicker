@@ -72,7 +72,7 @@ exports.handler = async (event) => {
     .then((data) => {
       console.log("HELOO??????")
       console.log(JSON.stringify(data))
-      return {body: JSON.stringify(data)}
+      callback(null, JSON.stringify(data))
     }).catch(err => {
       console.log("WHOOPS", err);
     })
