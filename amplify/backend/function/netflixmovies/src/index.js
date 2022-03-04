@@ -16,8 +16,9 @@ const Sequelize = require('sequelize');
 
 
 
-exports.handler = async (event) => {
+exports.handler = async (event, context,  callback) => {
   // console.log(`EVENT: ${JSON.stringify(event)}`);
+
 
   var sequelize = await new Sequelize('moivepicker-dev', 'admin', 'password', {
     host: 'moivepicker-dev.clgftnbfrrf4.us-east-1.rds.amazonaws.com',
@@ -72,10 +73,17 @@ exports.handler = async (event) => {
     .then((data) => {
       console.log("HELOO??????")
       console.log(JSON.stringify(data))
-      callback(null, JSON.stringify(data))
+      return {
+        statusCode: 200,
+        body: JSON.stringify(data),
+        headers: {'Content-Type': 'application/json'}
+    };
     }).catch(err => {
       console.log("WHOOPS", err);
     })
+
+
+// var databaseQuery = function()
   //      console.log('fuckin here')
   // return {
   //     statusCode: 200,
