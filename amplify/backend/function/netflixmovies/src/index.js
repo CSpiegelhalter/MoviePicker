@@ -65,7 +65,7 @@ exports.handler = async (event, context,  callback) => {
   // module.exports = db;
 
   console.log("here perhaps?")
-  await db.netflixMovies.findAll({
+  const returnData = await db.netflixMovies.findAll({
     where: {
       id: 2
     }
@@ -73,11 +73,7 @@ exports.handler = async (event, context,  callback) => {
     .then((data) => {
       console.log("HELOO??????")
       console.log(JSON.stringify(data))
-      return {
-        statusCode: 200,
-        body: JSON.stringify(data),
-        headers: {'Content-Type': 'application/json'}
-    };
+      return data
     }).catch(err => {
       console.log("WHOOPS", err);
     })
@@ -85,13 +81,13 @@ exports.handler = async (event, context,  callback) => {
 
 // var databaseQuery = function()
   //      console.log('fuckin here')
-  // return {
-  //     statusCode: 200,
+  return {
+      statusCode: 200,
   // //  Uncomment below to enable CORS requests
-  // //  headers: {
-  // //      "Access-Control-Allow-Origin": "*",
-  // //      "Access-Control-Allow-Headers": "*"
-  // //  }, 
-  //     body: JSON.stringify('Hello from Lambda!'),
-  // };
+   headers: {
+       "Access-Control-Allow-Origin": "*",
+       "Access-Control-Allow-Headers": "*"
+   }, 
+      body: JSON.stringify(returnData),
+  };
 };
