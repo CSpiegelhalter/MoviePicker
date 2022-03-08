@@ -17,8 +17,6 @@ const Sequelize = require('sequelize');
 
 
 exports.handler = async (event, context,  callback) => {
-  // console.log(`EVENT: ${JSON.stringify(event)}`);
-
 
   var sequelize = await new Sequelize('moivepicker-dev', 'admin', 'password', {
     host: 'moivepicker-dev.clgftnbfrrf4.us-east-1.rds.amazonaws.com',
@@ -28,7 +26,6 @@ exports.handler = async (event, context,  callback) => {
     dialect: 'mysql',
     dialectOptions: {
       ssl: 'Amazon RDS',
-      // ssl: { rejectUnauthorized: false }
     },
     pool: {
       max: 15,
@@ -52,7 +49,6 @@ exports.handler = async (event, context,  callback) => {
     console.log("Connected to the database!");
   })
     .catch(err => {
-      console.log('random log');
       console.log("Cannot connect to the database!", err);
       process.exit();
     });
@@ -63,15 +59,12 @@ exports.handler = async (event, context,  callback) => {
 
 
   // module.exports = db;
-
-  console.log("here perhaps?")
   const returnData = await db.netflixMovies.findAll({
-    where: {
-      id: 2
-    }
+    attributes: [
+      [Sequelize.fn('DISTINCT', Sequelize.col('genres')), 'genres']
+  ]
   })
     .then((data) => {
-      console.log("HELOO??????")
       console.log(JSON.stringify(data))
       return data
     }).catch(err => {

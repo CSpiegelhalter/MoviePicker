@@ -1,0 +1,42 @@
+import React from 'react';
+import { Platform, Text, StyleSheet, TextInput, View, Button } from 'react-native';
+// import Button from '../components/Button';
+import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { useNavigation } from '@react-navigation/native';
+import AppText from '../components/AppText';
+
+
+const icons = [
+    require('../assets/netflixlogo.jfif'),
+    require('../assets/disney_plus.jpg'),
+    require('../assets/HBO.jpg'),
+    require('../assets/hulu.jpg'),
+    require('../assets/amazonprime.jpg')
+]
+
+function ServiceChoice() {
+    const navigation = useNavigation();
+
+    return (
+        <>
+            <View style={styles.container}>
+
+                
+
+            </View>
+        </>
+    );
+}
+
+const styles = StyleSheet.create({
+   
+    container: {
+        width: '100%',
+        height: '100%',
+        flex: 1,
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
+})
+
+export default ServiceChoice;
