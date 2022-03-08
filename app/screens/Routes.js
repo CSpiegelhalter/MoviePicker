@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'
 import WelcomeScreen from './WelcomeScreen';
 import Genres from '../components/Genres';
+import ServiceChoice from './ServiceChoice';
 
 const Stack = createNativeStackNavigator();
 const StackNavigator = () => (
@@ -22,8 +23,8 @@ function Routes(props) {
             <NavigationContainer>
                 <Stack.Navigator>
                 <Stack.Screen
-                        name="Genres"
-                        component={Genres}
+                        name="ServiceChoice"
+                        component={ServiceChoice}
                         options={{
                             headerShown: false
                         }}
