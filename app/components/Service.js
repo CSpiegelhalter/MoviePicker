@@ -12,11 +12,12 @@ function Service({ icon }) {
 const styles = StyleSheet.create({
 
     service: {
-        width: '50%',
-        height: '50%',
+        width: '40%',
+        height: '20%',
+        margin: 'auto',
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        // alignItems: 'center',
+        // justifyContent: 'space-around',
         borderRadius: 50
     }
 })

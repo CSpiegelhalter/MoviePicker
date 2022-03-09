@@ -36,10 +36,14 @@ const styles = StyleSheet.create({
    
     container: {
         width: '100%',
-        height: '100%',
+        height: 'auto',
         flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center'
+        flexWrap: 'wrap',
+        // alignItems: 'center',
+        // flexDirection: 'column',
+        // justifyContent: 'space-around',
+        margin: 'auto',
+        // overflowY: 'auto'
     }
 })
 
