@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexWrap: 'wrap',
         // alignItems: 'center',
-        // flexDirection: 'column',
+        flexDirection: 'row',
         // justifyContent: 'space-around',
         margin: 'auto',
         // overflowY: 'auto'

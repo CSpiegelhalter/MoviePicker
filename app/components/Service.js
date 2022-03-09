@@ -16,6 +16,7 @@ const styles = StyleSheet.create({
         height: '20%',
         margin: 'auto',
         flex: 1,
+        flexBasis: '50%',
         // alignItems: 'center',
         // justifyContent: 'space-around',
         borderRadius: 50
