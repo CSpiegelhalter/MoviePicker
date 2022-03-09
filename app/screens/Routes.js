@@ -7,6 +7,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import WelcomeScreen from './WelcomeScreen';
 import Genres from '../components/Genres';
 import ServiceChoice from './ServiceChoice';
+import LogoNav from '../components/LogoNav';
 
 const Stack = createNativeStackNavigator();
 const StackNavigator = () => (
@@ -26,7 +27,9 @@ function Routes(props) {
                         name="ServiceChoice"
                         component={ServiceChoice}
                         options={{
-                            headerShown: false
+                            headerTitle: (props) => <LogoNav {...props} />,
+                            headerStyle: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+                            headerTitleStyle: { alignSelf: 'center' },
                         }}
                     />
                     <Stack.Screen
