@@ -22,14 +22,19 @@ function Routes(props) {
     return (
         <>
             <NavigationContainer>
-                <Stack.Navigator>
+                <Stack.Navigator
+                screenOptions={{  headerTitleAlign: "center" }}>
                 <Stack.Screen
                         name="ServiceChoice"
                         component={ServiceChoice}
                         options={{
-                            headerTitle: (props) => <LogoNav {...props} />,
-                            headerStyle: { flex: 1, alignItems: 'center', justifyContent: 'center' },
-                            headerTitleStyle: { alignSelf: 'center' },
+                            headerTitle: (props) => (
+                          
+                                <LogoNav {...props} />
+                            )
+     
+                         
+                           
                         }}
                     />
                     <Stack.Screen
