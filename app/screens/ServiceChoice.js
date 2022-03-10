@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, Text, StyleSheet, TextInput, View, Button } from 'react-native';
+import { Platform, ScrollView, SafeAreaView, Text, StyleSheet, TextInput, View, Button } from 'react-native';
 // import Button from '../components/Button';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native';
@@ -8,7 +8,7 @@ import Service from '../components/Service';
 
 
 const icons = [
-    // require('../assets/netflixlogo.jfif'),
+    require('../assets/netflixlogo.png'),
     require('../assets/disney_plus.jpg'),
     require('../assets/HBO.jpg'),
     require('../assets/hulu.jpg'),
@@ -20,29 +20,31 @@ function ServiceChoice() {
 
     return (
         <>
-            <View style={styles.container}>
+            <SafeAreaView style={styles.container}>
+                <ScrollView>
 
-                {icons.map( (item, index) => (
-                    <Service icon={item} key={index}></Service>
-                ))
-                }
+                    {icons.map((item, index) => (
+                        <Service icon={item} key={index}></Service>
+                    ))
+                    }
+                </ScrollView>
+            </SafeAreaView>
 
-            </View>
         </>
     );
 }
 
 const styles = StyleSheet.create({
-   
+
     container: {
         width: '100%',
-        height: 'auto',
+        height: '100%',
         flex: 1,
         flexWrap: 'wrap',
-        // alignItems: 'center',
+        alignItems: 'center',
         flexDirection: 'row',
-        // justifyContent: 'space-around',
-        margin: 'auto',
+        // justifyContent: 'center',
+        // margin: 'auto',
         // overflowY: 'auto'
     }
 })
