@@ -19,9 +19,9 @@ function ServiceChoice() {
     const navigation = useNavigation();
 
     return (
-        <>
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', height: '100%' }} >
             <SafeAreaView style={styles.container}>
-                <ScrollView contentContainerStyle={styles.container}>
+                <ScrollView contentContainerStyle={styles.scroll}>
 
                     {icons.map((item, index) => (
                         <Service icon={item} key={index}></Service>
@@ -29,24 +29,32 @@ function ServiceChoice() {
                     }
                 </ScrollView>
             </SafeAreaView>
-
-        </>
-    );
+</ View>
+            );
 }
 
-const styles = StyleSheet.create({
+            const styles = StyleSheet.create({
 
-    container: {
-        width: '100%',
-        // height: '100%',
-        // flexGrow: 1,
-        flexWrap: 'wrap',
-        // alignItems: 'center',
-        flexDirection: 'row',
-        // justifyContent: 'center',
+                container: {
+                width: '100%',
+            height: '100%',
+            // flexGrow: 1,
+            // flex: 1,
+
+
+            flexDirection: 'row',
+
         // margin: 'auto',
         // overflowY: 'auto'
+    },
+            scroll: {
+                width: '100%',
+            flexWrap: 'wrap',
+            flex: 1,
+            // alignItems: 'center',
+            // justifyContent: 'center',
+        
     }
 })
 
-export default ServiceChoice;
+            export default ServiceChoice;
