@@ -21,7 +21,7 @@ function ServiceChoice() {
     return (
         <>
             <SafeAreaView style={styles.container}>
-                <ScrollView>
+                <ScrollView contentContainerStyle={styles.container}>
 
                     {icons.map((item, index) => (
                         <Service icon={item} key={index}></Service>
@@ -38,10 +38,10 @@ const styles = StyleSheet.create({
 
     container: {
         width: '100%',
-        height: '100%',
-        flex: 1,
+        // height: '100%',
+        // flexGrow: 1,
         flexWrap: 'wrap',
-        alignItems: 'center',
+        // alignItems: 'center',
         flexDirection: 'row',
         // justifyContent: 'center',
         // margin: 'auto',
