@@ -19,7 +19,7 @@ function ServiceChoice() {
     const navigation = useNavigation();
 
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', height: '100%' }} >
+        <View style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', height: '100%' }} >
             <SafeAreaView style={styles.container}>
                 <ScrollView contentContainerStyle={styles.scroll}>
 
@@ -50,7 +50,7 @@ function ServiceChoice() {
             scroll: {
                 width: '100%',
             flexWrap: 'wrap',
-            flex: 1,
+            // flex: 1,
             // alignItems: 'center',
             // justifyContent: 'center',
         
