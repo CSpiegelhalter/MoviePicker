@@ -36,20 +36,23 @@ function ServiceChoice() {
     return (
         <View style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', height: '100%' }} >
             <SafeAreaView style={styles.container}>
-                <ScrollView contentContainerStyle={styles.scroll}>
+               {/*  <ScrollView contentContainerStyle={styles.scroll}>
+                    <View> */}
                     <FlatList 
+                    nestedScrollEnabled={true}
                     data={icons}
                     keyExtractor={icon => icon.id}
-                    renderItem={({ item }) => 
-                    <Service icon={item.icon} key={index} onPress={() => console.log('heyyyyy')}></Service>
+                    renderItem={({ item, index }) => 
+                    <Service icon={item.icon} key={index} onPress={() => console.log('heyyyyy')} />
                 }
                     />
                     {/* {icons.map((item, index) => (
                         <Service icon={item.icon} key={index} onPress={() => console.log('heyyyyy')}></Service>
                     ))
                     } */}
-                </ScrollView>
-            </SafeAreaView>
+                    {/* </View>
+                </ScrollView>*/}
+            </SafeAreaView> 
         </ View>
     );
 }
