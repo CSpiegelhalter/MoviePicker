@@ -13,12 +13,13 @@ function Service({ icon, onPress }) {
         else {
             setStyling(styles.service)
         }
+        onPress()
     }
 
     return (
         <>
             <TouchableHighlight
-                onPress={onPress}
+                onPress={changeStyle}
                 style={styles.container}
             >
                 <Image style={styling} source={icon}></Image>
@@ -42,14 +43,19 @@ const styles = StyleSheet.create({
         width: '75%',
         height: 175,
         flexBasis: '50%',
-        borderRadius: 50
+        borderRadius: 50,
+        margin: 10
     },
     clicked: {
         width: '75%',
         height: 175,
         flexBasis: '50%',
         borderRadius: 50,
-        borderColor: 'blue'
+        // borderStyle: 'solid',
+        borderWidth: 6,
+        borderColor: 'blue',
+        margin: 10,
+        opacity: .7
     }
 })
 
