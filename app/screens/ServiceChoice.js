@@ -1,6 +1,5 @@
 import React from 'react';
 import { Platform, ScrollView, SafeAreaView, Text, StyleSheet, TextInput, View, Button, FlatList } from 'react-native';
-// import Button from '../components/Button';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native';
 import AppText from '../components/AppText';
@@ -36,8 +35,6 @@ function ServiceChoice() {
     return (
         <View style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', height: '100%' }} >
             <SafeAreaView style={styles.container}>
-                {/*  <ScrollView contentContainerStyle={styles.scroll}>
-                    <View> */}
                 <FlatList
                     nestedScrollEnabled={true}
                     data={icons}
@@ -49,12 +46,6 @@ function ServiceChoice() {
                         />
                     }
                 />
-                {/* {icons.map((item, index) => (
-                        <Service icon={item.icon} key={index} onPress={() => console.log('heyyyyy')}></Service>
-                    ))
-                    } */}
-                {/* </View>
-                </ScrollView>*/}
             </SafeAreaView>
         </ View>
     );
@@ -65,22 +56,11 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: '100%',
-        // flexGrow: 1,
-        // flex: 1,
-
-
         flexDirection: 'row',
-
-        // margin: 'auto',
-        // overflowY: 'auto'
     },
     scroll: {
         width: '100%',
         flexWrap: 'wrap',
-        // flex: 1,
-        // alignItems: 'center',
-        // justifyContent: 'center',
-
     }
 })
 
