@@ -1,7 +1,7 @@
 import { container } from 'aws-amplify';
 import React, { useState } from 'react';
 import { Platform, Text, StyleSheet, TextInput, View, Button, Image, TouchableHighlight } from 'react-native';
-function Service({ icon }) {
+function Service({ icon, onPress }) {
 
     const [styling, setStyling] = useState(styles.service)
 
@@ -17,11 +17,11 @@ function Service({ icon }) {
 
     return (
         <>
-            <TouchableHighlight 
-
-            style={styles.container} 
+            <TouchableHighlight
+                onPress={onPress}
+                style={styles.container}
             >
-                <Image style={styling}  source={icon}></Image>
+                <Image style={styling} source={icon}></Image>
             </TouchableHighlight>
         </>
     );
