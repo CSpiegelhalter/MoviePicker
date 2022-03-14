@@ -40,12 +40,14 @@ function ServiceChoice() {
                     <FlatList 
                     data={icons}
                     keyExtractor={icon => icon.id}
-                    renderItem={({ item }) => }
+                    renderItem={({ item }) => 
+                    <Service icon={item.icon} key={index} onPress={() => console.log('heyyyyy')}></Service>
+                }
                     />
-                    {icons.map((item, index) => (
+                    {/* {icons.map((item, index) => (
                         <Service icon={item.icon} key={index} onPress={() => console.log('heyyyyy')}></Service>
                     ))
-                    }
+                    } */}
                 </ScrollView>
             </SafeAreaView>
         </ View>
