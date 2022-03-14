@@ -1,7 +1,6 @@
 import { container } from 'aws-amplify';
 import React, { useState } from 'react';
-import { Platform, Text, StyleSheet, TextInput, View, Button, Image } from 'react-native';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import { Platform, Text, StyleSheet, TextInput, View, Button, Image, TouchableHighlight } from 'react-native';
 function Service({ icon }) {
 
     const [styling, setStyling] = useState(styles.service)
@@ -18,9 +17,9 @@ function Service({ icon }) {
 
     return (
         <>
-            <TouchableOpacity style={styles.container} onPress={changeStyle}>
+            <TouchableHighlight style={styles.container} onPress={changeStyle}>
                 <Image style={styling}  source={icon}></Image>
-            </TouchableOpacity>
+            </TouchableHighlight>
         </>
     );
 }
