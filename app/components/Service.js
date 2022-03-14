@@ -8,7 +8,6 @@ function Service({ icon, onPress }) {
     const changeStyle = () => {
         if (styling == styles.service) {
             setStyling(styles.clicked)
-            console.log('hey');
         }
         else {
             setStyling(styles.service)
@@ -19,6 +18,7 @@ function Service({ icon, onPress }) {
     return (
         <>
             <TouchableHighlight
+            underlayColor={'none'}
                 onPress={changeStyle}
                 style={styles.container}
             >
