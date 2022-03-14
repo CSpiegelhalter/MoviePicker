@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, ScrollView, SafeAreaView, Text, StyleSheet, TextInput, View, Button } from 'react-native';
+import { Platform, ScrollView, SafeAreaView, Text, StyleSheet, TextInput, View, Button, FlatList } from 'react-native';
 // import Button from '../components/Button';
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native';
@@ -37,9 +37,13 @@ function ServiceChoice() {
         <View style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', height: '100%' }} >
             <SafeAreaView style={styles.container}>
                 <ScrollView contentContainerStyle={styles.scroll}>
-
+                    <FlatList 
+                    data={icons}
+                    keyExtractor={icon => icon.id}
+                    renderItem={({ item }) => }
+                    />
                     {icons.map((item, index) => (
-                        <Service icon={item.icon} key={index} onPress={console.log(item.id)}></Service>
+                        <Service icon={item.icon} key={index} onPress={() => console.log('heyyyyy')}></Service>
                     ))
                     }
                 </ScrollView>
