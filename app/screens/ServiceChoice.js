@@ -39,10 +39,10 @@ function ServiceChoice() {
                     nestedScrollEnabled={true}
                     data={icons}
                     keyExtractor={icon => icon.id}
-                    renderItem={({ item, index }) =>
+                    renderItem={({ item }) =>
                         <Service
                             icon={item.icon}
-                            onPress={() => console.log('heyyyyy')}
+                            onPress={() => console.log(item.id)}
                         />
                     }
                 />
