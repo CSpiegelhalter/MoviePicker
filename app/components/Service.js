@@ -18,9 +18,9 @@ function Service({ icon }) {
     return (
         <>
             <TouchableHighlight 
-            
+
             style={styles.container} 
-            onPress={changeStyle}>
+            >
                 <Image style={styling}  source={icon}></Image>
             </TouchableHighlight>
         </>

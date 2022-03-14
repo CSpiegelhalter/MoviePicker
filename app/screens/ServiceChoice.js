@@ -39,7 +39,7 @@ function ServiceChoice() {
                 <ScrollView contentContainerStyle={styles.scroll}>
 
                     {icons.map((item, index) => (
-                        <Service icon={item} key={index}></Service>
+                        <Service icon={item.icon} key={index} onPress={console.log(item.id)}></Service>
                     ))
                     }
                 </ScrollView>
