@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, ImageBackground, ScrollView, StyleSheet, View } from 'react-native';
+import { Image, ImageBackground, ScrollView, StyleSheet, View, Button } from 'react-native';
 import LoginScreen from './LoginScreen';
 import SignupScreen from './SignupScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
@@ -23,19 +23,31 @@ function Routes(props) {
         <>
             <NavigationContainer>
                 <Stack.Navigator
-                screenOptions={{  headerTitleAlign: "center" }}>
-                <Stack.Screen
+                    screenOptions={{ headerTitleAlign: "center" }}>
+                    <Stack.Screen
                         name="ServiceChoice"
                         component={ServiceChoice}
                         options={{
                             headerTitle: (props) => (
-                          
+
                                 <LogoNav {...props} />
+                            ),
+                            headerLeft: () => (
+                                <Button
+                                    onPress={() => alert('This is a button!')}
+                                    title="Info"
+                                    color="#fff"
+                                />
+                            ),
+                            headerRight: () => (
+                                <Button
+                                    onPress={() => alert('This is a button!')}
+                                    title="Info"
+                                    color="#fff"
+                                />
                             )
-     
-                         
-                           
-                        }}
+                        }
+                        }
                     />
                     <Stack.Screen
                         name="Login"
