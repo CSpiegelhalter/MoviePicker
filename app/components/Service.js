@@ -17,7 +17,10 @@ function Service({ icon }) {
 
     return (
         <>
-            <TouchableHighlight style={styles.container} onPress={changeStyle}>
+            <TouchableHighlight 
+            
+            style={styles.container} 
+            onPress={changeStyle}>
                 <Image style={styling}  source={icon}></Image>
             </TouchableHighlight>
         </>
@@ -31,7 +34,8 @@ const styles = StyleSheet.create({
         height: '50%',
         flex: 1,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        borderColor: 'blue'
 
     },
     service: {
@@ -41,8 +45,8 @@ const styles = StyleSheet.create({
         borderRadius: 50
     },
     clicked: {
-        width: '100%',
-        height: 75,
+        width: '75%',
+        height: 175,
         flexBasis: '50%',
         borderRadius: 50,
         borderColor: 'blue'
