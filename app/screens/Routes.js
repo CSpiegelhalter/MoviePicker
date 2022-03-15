@@ -39,20 +39,6 @@ function Routes(props) {
                             headerTitle: (props) => (
 
                                 <LogoNav {...props} />
-                            ),
-                            headerLeft: () => (
-                                <Button
-                                    onPress={() => console.log(service)}
-                                    title="Info"
-                                    color="#fff"
-                                />
-                            ),
-                            headerRight: () => (
-                                <Button
-                                    onPress={() => alert('This is a button!')}
-                                    title="Info"
-                                    color="#fff"
-                                />
                             )
                         }
                         }

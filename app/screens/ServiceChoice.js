@@ -35,18 +35,22 @@ function ServiceChoice() {
     return (
         <View style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', height: '100%' }} >
             <SafeAreaView style={styles.container}>
+            <AppText style={{alignSelf: 'center', margin: 'auto', color: 'black'}}>Select streaming services:</AppText>
                 <FlatList
                     nestedScrollEnabled={true}
                     data={icons}
                     keyExtractor={icon => icon.id}
                     renderItem={({ item }) =>
+                    
                         <Service
                             icon={item.icon}
                             id={item.id}
-                            onPress={() => console.log(service)}
+                            onPress={() => console.log(item.id)}
                         />
                     }
                 />
+                <Button
+                title="Next: Genres"></Button>
             </SafeAreaView>
         </ View>
     );
@@ -57,7 +61,9 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: '100%',
-        flexDirection: 'row',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        // alignItems: 'center'
     },
     scroll: {
         width: '100%',

@@ -1,9 +1,6 @@
 import React from 'react';
-import { Platform, ScrollView, SafeAreaView, Text, StyleSheet, TextInput, View, Button, FlatList } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons'
+import { SafeAreaView, StyleSheet, View, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import AppText from '../components/AppText';
-import Service from '../components/Service';
 import Genres from '../components/Genres';
 
 

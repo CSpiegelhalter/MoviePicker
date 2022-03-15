@@ -4,6 +4,7 @@ export default {
     text: {
         color: '#0c0c0c',
         fontSize: 18,
-        fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir'
+        fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Avenir',
+        alignSelf: 'center'
     }
 }
