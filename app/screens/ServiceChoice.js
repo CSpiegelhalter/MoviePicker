@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Platform, ScrollView, SafeAreaView, Text, StyleSheet, TextInput, View, Button, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import AppText from '../components/AppText';
@@ -32,13 +32,18 @@ function ServiceChoice() {
     const navigation = useNavigation();
 
     const [myServices, setMyServices] = useState([])
+    useEffect(() => {
 
+      }, [myServices]);
 
     const editServices = (id) => {
         if (!(myServices.includes(id))) {
             setMyServices([...myServices, id])
         }
-        console.log(myServices);
+        else {
+            let holder = myServices.filter((a) => a !== id)
+            setMyServices(holder)
+        }
     }
 
     return (
