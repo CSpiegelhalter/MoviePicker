@@ -5,23 +5,23 @@ import Genres from '../components/Genres';
 
 
 const genres = [
-    'comedy ',
-    'drama',
-    'adventure',
-    'action',
-    'romantic comedy',
-    'crime',
-    'thriller',
-    'mystery',
-    'romance',
-    'documentary',
-    'animated',
-    'live-action',
-    'fantasy',
-    'musical',
-    'sci-fi',
-    'horror',
-    'family'
+    'Comedy ',
+    'Drama',
+    'Adventure',
+    'Action',
+    'Romantic Comedy',
+    'Crime',
+    'Thriller',
+    'Mystery',
+    'Romance',
+    'Documentary',
+    'Animated',
+    'Live-action',
+    'Fantasy',
+    'Musical',
+    'Sci-fi',
+    'Horror',
+    'Family'
 ]
 
 function GenreChoice() {
@@ -37,7 +37,7 @@ function GenreChoice() {
                     renderItem={({ item }) =>
                         <Genres
                             genreName={item}
-                            onPress={() => console.log(service)}
+                            onPress={() => console.log('service')}
                         />
                     }
                 />
