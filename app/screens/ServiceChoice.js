@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Platform, ScrollView, SafeAreaView, Text, StyleSheet, TextInput, View, Button, FlatList } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native';
 import AppText from '../components/AppText';
 import Service from '../components/Service';
@@ -32,6 +31,16 @@ const icons = [
 function ServiceChoice() {
     const navigation = useNavigation();
 
+    const [myServices, setMyServices] = useState([])
+
+
+    const editServices = (id) => {
+        if (!(myServices.includes(id))) {
+            setMyServices([...myServices, id])
+        }
+        console.log(myServices);
+    }
+
     return (
         <View style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', height: '100%' }} >
             <SafeAreaView style={styles.container}>
@@ -45,12 +54,14 @@ function ServiceChoice() {
                         <Service
                             icon={item.icon}
                             id={item.id}
-                            onPress={() => console.log(item.id)}
+                            onPress={() => editServices(item.id)}
                         />
                     }
                 />
                 <Button
-                title="Next: Genres"></Button>
+                title="Next: Genres" 
+                onPress={() => console.log(myServices)}
+                />
             </SafeAreaView>
         </ View>
     );
