@@ -15,32 +15,34 @@ API.configure(awsconfig)
 
 
 
-function Genres() {
+function Genres({ genreName }) {
     const navigation = useNavigation();
 
-    onPress = () => {
-        API.get('netflixmovies', '/netflixmovies')
-            .then((data) => {
-            console.log('hey bbbbbb');
-            console.log(data)
-            // data.forEach((element) => console.log(element))) 
-            }).catch((err) => {
-                console.log("Failed", err.response.message);
-            })}
+    // onPress = () => {
+    //     API.get('netflixmovies', '/netflixmovies')
+    //         .then((data) => {
+    //         console.log('hey bbbbbb');
+    //         console.log(data)
+    //         // data.forEach((element) => console.log(element))) 
+    //         }).catch((err) => {
+    //             console.log("Failed", err.response.message);
+    //         })}
 
     return (
         <>
-            <View style={styles.container}>
-
-                <AppText style={{ alignSelf: 'center',width: '100%', color: 'tomato'}} onPress={onPress()}>Hello there</AppText>
-
-            </View>
+            <TouchableHighlight
+                underlayColor={'none'}
+                onPress={changeStyle}
+                style={styles.container}
+            >
+                <Text >{ genreName }</Text>
+            </TouchableHighlight>
         </>
     );
 }
 
 const styles = StyleSheet.create({
-   
+
     container: {
         width: '100%',
         height: '100%',

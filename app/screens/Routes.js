@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, ImageBackground, ScrollView, StyleSheet, View, Button } from 'react-native';
 import LoginScreen from './LoginScreen';
 import SignupScreen from './SignupScreen';
@@ -10,15 +10,23 @@ import ServiceChoice from './ServiceChoice';
 import LogoNav from '../components/LogoNav';
 
 const Stack = createNativeStackNavigator();
-const StackNavigator = () => (
-    <Stack.Navigator>
-        {/* <Stack.Screen name="Signup" component={SignupScreen} /> */}
-        <Stack.Screen name="Login" component={LoginScreen} />
-    </Stack.Navigator>
-)
+
+
+
+// const StackNavigator = () => (
+//     <Stack.Navigator>
+//         {/* <Stack.Screen name="Signup" component={SignupScreen} /> */}
+//         <Stack.Screen name="Login" component={LoginScreen} />
+//     </Stack.Navigator>
+// )
 
 
 function Routes(props) {
+
+
+    const [service, setService] = useState([])
+
+
     return (
         <>
             <NavigationContainer>
@@ -34,7 +42,7 @@ function Routes(props) {
                             ),
                             headerLeft: () => (
                                 <Button
-                                    onPress={() => alert('This is a button!')}
+                                    onPress={() => console.log(service)}
                                     title="Info"
                                     color="#fff"
                                 />

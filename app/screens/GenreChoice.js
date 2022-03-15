@@ -4,32 +4,30 @@ import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native';
 import AppText from '../components/AppText';
 import Service from '../components/Service';
+import Genres from '../components/Genres';
 
 
-const icons = [
-    {
-        icon: require('../assets/netflixlogo.png'),
-        id: 'netflix'
-    },
-    {
-        icon: require('../assets/disney_plus.jpg'),
-        id: 'disney'
-    },
-    {
-        icon: require('../assets/HBO.jpg'),
-        id: 'hbo'
-    },
-    {
-        icon: require('../assets/hulu.jpg'),
-        id: 'hulu'
-    },
-    {
-        icon: require('../assets/amazonprime.jpg'),
-        id: 'prime'
-    }
+const genres = [
+    'comedy ',
+    'drama',
+    'adventure',
+    'action',
+    'romantic comedy',
+    'crime',
+    'thriller',
+    'mystery',
+    'romance',
+    'documentary',
+    'animated',
+    'live-action',
+    'fantasy',
+    'musical',
+    'sci-fi',
+    'horror',
+    'family'
 ]
 
-function ServiceChoice() {
+function GenreChoice() {
     const navigation = useNavigation();
 
     return (
@@ -37,12 +35,11 @@ function ServiceChoice() {
             <SafeAreaView style={styles.container}>
                 <FlatList
                     nestedScrollEnabled={true}
-                    data={icons}
-                    keyExtractor={icon => icon.id}
+                    data={genres}
+                    keyExtractor={genre => genre}
                     renderItem={({ item }) =>
-                        <Service
-                            icon={item.icon}
-                            id={item.id}
+                        <Genres
+                            genreName={item}
                             onPress={() => console.log(service)}
                         />
                     }
@@ -65,4 +62,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default ServiceChoice;
+export default GenreChoice;

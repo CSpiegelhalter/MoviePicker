@@ -18,7 +18,7 @@ function Service({ icon, onPress }) {
     return (
         <>
             <TouchableHighlight
-            underlayColor={'none'}
+                underlayColor={'none'}
                 onPress={changeStyle}
                 style={styles.container}
             >
