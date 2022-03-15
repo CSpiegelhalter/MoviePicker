@@ -1,5 +1,5 @@
-import React from 'react';
-import { Platform, Text, StyleSheet, TextInput, View, Button, TouchableHighlight } from 'react-native';
+import React, { useState } from 'react';
+import { Platform, Text, StyleSheet, TextInput, View, Button, TouchableHighlight, CheckBox } from 'react-native';
 // import Button from '../components/Button';
 import colors from '../config/colors';
 import Amplify, { API } from 'aws-amplify';
@@ -18,6 +18,8 @@ API.configure(awsconfig)
 function Genres({ genreName }) {
     const navigation = useNavigation();
 
+    const [isSelected, setSelection] = useState(false);
+
     // onPress = () => {
     //     API.get('netflixmovies', '/netflixmovies')
     //         .then((data) => {
@@ -31,10 +33,15 @@ function Genres({ genreName }) {
     return (
         <>
             <TouchableHighlight
-                underlayColor={'none'}
+                // underlayColor={'none'}
                 // onPress={changeStyle}
                 style={styles.container}
             >
+                <CheckBox
+          value={isSelected}
+          onValueChange={setSelection}
+        //   style={styles.checkbox}
+        />
                 <Text >{ genreName }</Text>
             </TouchableHighlight>
         </>
@@ -47,7 +54,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: '100%',
         flex: 1,
-        alignItems: 'center',
+        // alignItems: 'center',
         justifyContent: 'center'
     }
 })
