@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StyleSheet, View, FlatList, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Genres from '../components/Genres';
+import AppText from '../components/AppText';
 
 
 const genres = [
@@ -47,6 +48,7 @@ function GenreChoice({ route }) {
     return (
         <View style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', height: '100%' }} >
             <SafeAreaView style={styles.container}>
+            <AppText style={{alignSelf: 'center', margin: 'auto', color: 'black'}}>Choose Genres:</AppText>
                 <FlatList
                     nestedScrollEnabled={true}
                     data={genres}
@@ -72,8 +74,6 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         height: '100%',
-        // flexDirection: 'row',
-        // justifyContent: 'center'
     },
     scroll: {
         width: '100%',
