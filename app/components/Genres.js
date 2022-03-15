@@ -1,5 +1,5 @@
 import React from 'react';
-import { Platform, Text, StyleSheet, TextInput, View, Button } from 'react-native';
+import { Platform, Text, StyleSheet, TextInput, View, Button, TouchableHighlight } from 'react-native';
 // import Button from '../components/Button';
 import colors from '../config/colors';
 import Amplify, { API } from 'aws-amplify';
@@ -32,7 +32,7 @@ function Genres({ genreName }) {
         <>
             <TouchableHighlight
                 underlayColor={'none'}
-                onPress={changeStyle}
+                // onPress={changeStyle}
                 style={styles.container}
             >
                 <Text >{ genreName }</Text>

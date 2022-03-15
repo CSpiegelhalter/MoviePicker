@@ -65,7 +65,7 @@ function ServiceChoice() {
                 />
                 <Button
                 title="Next: Genres" 
-                onPress={() => console.log(myServices)}
+                onPress={() => navigation.navigate('GenreChoice', { services: myServices })}
                 />
             </SafeAreaView>
         </ View>

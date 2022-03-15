@@ -5,7 +5,7 @@ import SignupScreen from './SignupScreen';
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { NavigationContainer } from '@react-navigation/native'
 import WelcomeScreen from './WelcomeScreen';
-import Genres from '../components/Genres';
+import GenreChoice from './GenreChoice';
 import ServiceChoice from './ServiceChoice';
 import LogoNav from '../components/LogoNav';
 
@@ -35,6 +35,17 @@ function Routes(props) {
                     <Stack.Screen
                         name="ServiceChoice"
                         component={ServiceChoice}
+                        options={{
+                            headerTitle: (props) => (
+
+                                <LogoNav {...props} />
+                            )
+                        }
+                        }
+                    />
+                    <Stack.Screen
+                        name="GenreChoice"
+                        component={GenreChoice}
                         options={{
                             headerTitle: (props) => (
 
