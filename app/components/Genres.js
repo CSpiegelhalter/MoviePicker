@@ -16,10 +16,15 @@ API.configure(awsconfig)
 
 
 
-function Genres({ genreName }) {
+function Genres({ genreName, onPress }) {
     const navigation = useNavigation();
 
-    const [isSelected, setSelection] = useState(false);
+    const [isChecked, setIsChecked] = useState(false);
+
+    const handleClick = () => {
+        setIsChecked(!isChecked)
+        onPress()
+    }
 
     // onPress = () => {
     //     API.get('netflixmovies', '/netflixmovies')
@@ -35,11 +40,14 @@ function Genres({ genreName }) {
         <>
             <TouchableHighlight
                 // underlayColor={'none'}
-                // onPress={changeStyle}
+                onPress={handleClick}
                 style={styles.container}
             >
                 <View style={styles.genre}>
-                    <CheckBox />
+                    <CheckBox 
+                    onClick={handleClick}
+                    isChecked={isChecked}
+                    />
                     <AppText >{genreName}</AppText>
                 </View>
             </TouchableHighlight>
