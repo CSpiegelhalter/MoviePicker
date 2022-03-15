@@ -24,9 +24,10 @@ const genres = [
     'Family'
 ]
 
-function GenreChoice() {
+function GenreChoice({ route }) {
     const navigation = useNavigation();
     const [genreSelect, setGenreSelect] = useState([])
+    const services = route.params
 
     useEffect(() => {
 
@@ -59,7 +60,7 @@ function GenreChoice() {
                 />
                 <Button
                 title="Next: Choose movies/shows" 
-                onPress={() => console.log(genreSelect)}
+                onPress={() => console.log(services)}
                 />
             </SafeAreaView>
         </ View>
