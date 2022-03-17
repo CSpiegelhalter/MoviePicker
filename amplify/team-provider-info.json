@@ -21,6 +21,10 @@
           "port": "3306",
           "deploymentBucketName": "amplify-amplify2f501346b37b4-staging-21129-deployment",
           "s3Key": "amplify-builds/netflixmovies-45314a58676749316b71-build.zip"
+        },
+        "amazonmovies": {
+          "deploymentBucketName": "amplify-amplify2f501346b37b4-staging-21129-deployment",
+          "s3Key": "amplify-builds/amazonmovies-537772575a7841797234-build.zip"
         }
       }
     }

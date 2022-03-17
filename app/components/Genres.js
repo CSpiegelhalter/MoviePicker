@@ -26,16 +26,6 @@ function Genres({ genreName, onPress }) {
         onPress()
     }
 
-    // onPress = () => {
-    //     API.get('netflixmovies', '/netflixmovies')
-    //         .then((data) => {
-    //         console.log('hey bbbbbb');
-    //         console.log(data)
-    //         // data.forEach((element) => console.log(element))) 
-    //         }).catch((err) => {
-    //             console.log("Failed", err.response.message);
-    //         })}
-
     return (
         <>
             <TouchableHighlight

@@ -5,6 +5,11 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
       "dependsOn": []
+    },
+    "amazonmovies": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "api": {
