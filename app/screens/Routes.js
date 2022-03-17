@@ -32,13 +32,7 @@ function Routes(props) {
             <NavigationContainer>
                 <Stack.Navigator
                     screenOptions={{ headerTitleAlign: "center" }}>
-                        <Stack.Screen
-                        name="Login"
-                        component={LoginScreen}
-                        options={{
-                            headerShown: false
-                        }}
-                    />
+                        
                     <Stack.Screen
                         name="ServiceChoice"
                         component={ServiceChoice}
@@ -61,7 +55,13 @@ function Routes(props) {
                         }
                         }
                     />
-                    
+                    <Stack.Screen
+                        name="Login"
+                        component={LoginScreen}
+                        options={{
+                            headerShown: false
+                        }}
+                    />
                     <Stack.Screen
                         name="Signup"
                         component={SignupScreen}

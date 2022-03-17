@@ -3,6 +3,7 @@ import { Platform, ScrollView, SafeAreaView, Text, StyleSheet, TextInput, View, 
 import { useNavigation } from '@react-navigation/native';
 import AppText from '../components/AppText';
 import Service from '../components/Service';
+import allMovies from '../api/allMovies'
 
 
 const icons = [
@@ -33,7 +34,7 @@ function ServiceChoice() {
 
     const [myServices, setMyServices] = useState([])
     useEffect(() => {
-
+        
       }, [myServices]);
 
     const editServices = (id) => {
@@ -59,7 +60,8 @@ function ServiceChoice() {
                         <Service
                             icon={item.icon}
                             id={item.id}
-                            onPress={() => editServices(item.id)}
+                            onPress={() => console.log(allMovies.allNetflix())}
+                            // onPress={() => editServices(item.id)}
                         />
                     }
                 />
