@@ -18,27 +18,15 @@ const db = require('/opt/dbConnection')
 
 exports.handler = async (event, context, callback) => {
 
-  console.log(event.queryStringParameters.service);
-
-  console.log(event.queryStringParameters.genres);
   let service = event.queryStringParameters.service
-  let table;
-  // if (service == "netflix") table = db.netflix
   let genreList = event.queryStringParameters.genres
 
   const returnData = await db[service].findAll({
+    limit: 10,
     where: {
-      genres: {
-        [db.Sequelize.Op.in]: [genreList]
-      }
+      genres: db.sequelize.where(db.sequelize.fn('LOWER', db.sequelize.col('genres')), 'LIKE', '%' + genreList + '%')
     }
   })
-    .then((data) => {
-      console.log(JSON.stringify(data))
-      return data
-    }).catch(err => {
-      console.log("WHOOPS", err);
-    })
 
   return {
     statusCode: 200,

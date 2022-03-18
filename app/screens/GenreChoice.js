@@ -65,7 +65,7 @@ function GenreChoice({ route }) {
                 <Button
                 title="Next: Choose movies/shows" 
                 // onPress={() => console.log(services)}
-                onPress={() => allMovies.allNetflix(services, genreSelect)}
+                onPress={() => console.log(allMovies.allNetflix(services, genreSelect))}
                 />
             </SafeAreaView>
         </ View>
