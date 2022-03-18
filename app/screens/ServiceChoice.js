@@ -13,11 +13,11 @@ const icons = [
     },
     {
         icon: require('../assets/disney_plus.jpg'),
-        id: 'disney'
+        id: 'disney-plus'
     },
     {
         icon: require('../assets/HBO.jpg'),
-        id: 'hbo'
+        id: 'hbo-max'
     },
     {
         icon: require('../assets/hulu.jpg'),
@@ -25,7 +25,7 @@ const icons = [
     },
     {
         icon: require('../assets/amazonprime.jpg'),
-        id: 'prime'
+        id: 'amazon-prime-video'
     }
 ]
 
