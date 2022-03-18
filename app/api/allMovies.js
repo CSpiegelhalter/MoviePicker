@@ -8,14 +8,14 @@ API.configure(awsconfig)
 const allNetflix = async (services, genres) => {
     var returnData = {}
 
-        for (let i = 0; i <= services.length - 1; i++) {
-            for (let j = 0; j <= genres.length - 1; j++) {
-                await API.get('netflixmovies', `/netflixmovies?service=${services[i]}&genres=${genres[j]}`)
+        // for (let i = 0; i <= services.length - 1; i++) {
+        //     for (let j = 0; j <= genres.length - 1; j++) {
+                await API.get('netflixmovies', `/netflixmovies?service=${services}&genres=${genres}`)
                 .then((data) => {
-                    returnData[genres[j]] = data
+                    returnData = data
                 })
-            }
-        }
+        //     }
+        // }
     
     // for (let i = 0; i <= services.length - 1; i++) {
     //     for ()

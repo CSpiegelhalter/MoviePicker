@@ -31,7 +31,7 @@ function GenreChoice({ route }) {
     const navigation = useNavigation();
     const [genreSelect, setGenreSelect] = useState([])
     const services = route.params.services
-
+    var movies = []
     useEffect(() => {
 
     }, [genreSelect]);
@@ -47,10 +47,18 @@ function GenreChoice({ route }) {
         console.log(genreSelect);
     }
 
+    const onClick = () => {
+
+        movies.push(allMovies.allNetflix(services, genreSelect))
+
+
+        console.log(movies);
+    }
+
     return (
         <View style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', height: '100%' }} >
             <SafeAreaView style={styles.container}>
-            <AppText style={{alignSelf: 'center', margin: 'auto', color: 'black'}}>Choose Genres:</AppText>
+                <AppText style={{ alignSelf: 'center', margin: 'auto', color: 'black' }}>Choose Genres:</AppText>
                 <FlatList
                     nestedScrollEnabled={true}
                     data={genres}
@@ -63,9 +71,9 @@ function GenreChoice({ route }) {
                     }
                 />
                 <Button
-                title="Next: Choose movies/shows" 
-                // onPress={() => console.log(services)}
-                onPress={() => console.log(allMovies.allNetflix(services, genreSelect))}
+                    title="Next: Choose movies/shows"
+                    // onPress={() => console.log(services)}
+                    onPress={() => onClick()}
                 />
             </SafeAreaView>
         </ View>

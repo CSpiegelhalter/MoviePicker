@@ -22,7 +22,8 @@ exports.handler = async (event, context, callback) => {
   let genreList = event.queryStringParameters.genres
 
   const returnData = await db[service].findAll({
-    limit: 10,
+    order: db.sequelize.random(),
+    limit: 3,
     where: {
       genres: db.sequelize.where(db.sequelize.fn('LOWER', db.sequelize.col('genres')), 'LIKE', '%' + genreList + '%')
     }
