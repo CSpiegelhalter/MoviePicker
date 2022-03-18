@@ -1,18 +1,8 @@
 import React, { useState } from 'react';
-import { Platform, Text, StyleSheet, TextInput, View, Button, TouchableHighlight } from 'react-native';
+import { StyleSheet, View, TouchableHighlight } from 'react-native';
 import CheckBox from 'react-native-check-box';
-// import Button from '../components/Button';
-import colors from '../config/colors';
-import Amplify, { API } from 'aws-amplify';
-
-import awsconfig from '../../src/aws-exports'
-
-import { MaterialCommunityIcons } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native';
 import AppText from './AppText';
-Amplify.configure(awsconfig)
-API.configure(awsconfig)
-
 
 
 
