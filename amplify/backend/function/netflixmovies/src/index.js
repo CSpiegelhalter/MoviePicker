@@ -17,9 +17,11 @@ const db = require('/opt/dbConnection')
 
 
 exports.handler = async (event, context,  callback) => {
-  console.log(event['queryStringParameters']);
-    console.log(event.queryStringParameters);
-    console.log(event);
+
+    console.log(event.queryStringParameters.service);
+
+    console.log(event.queryStringParameters.genres);
+
 
   // module.exports = db;
 //   const returnData = await db.netflixMovies.findAll({

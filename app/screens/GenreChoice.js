@@ -29,7 +29,7 @@ const genres = [
 function GenreChoice({ route }) {
     const navigation = useNavigation();
     const [genreSelect, setGenreSelect] = useState([])
-    const services = route.params
+    const services = route.params.services
 
     useEffect(() => {
 
@@ -63,6 +63,7 @@ function GenreChoice({ route }) {
                 />
                 <Button
                 title="Next: Choose movies/shows" 
+                // onPress={() => console.log(services)}
                 onPress={() => allMovies.allNetflix(services, genreSelect)}
                 />
             </SafeAreaView>
