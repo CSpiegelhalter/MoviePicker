@@ -22,12 +22,14 @@ exports.handler = async (event, context, callback) => {
 
   console.log(event.queryStringParameters.genres);
   let service = event.queryStringParameters.service
+  let table;
+  // if (service == "netflix") table = db.netflix
   let genreList = event.queryStringParameters.genres
 
   const returnData = await db[service].findAll({
     where: {
       genres: {
-        [db.Sequelize.contains]: [genreList]
+        [db.Sequelize.Op.in]: [genreList]
       }
     }
   })
