@@ -11,18 +11,19 @@ const genres = [
     'Drama',
     'Adventure',
     'Action',
-    'Romantic Comedy',
+    'Romantic',
     'Crime',
     'Thriller',
     'Mystery',
     'Romance',
-    'Documentary',
+    'Documentaries',
     'Animated',
     'Live-action',
     'Fantasy',
     'Musical',
-    'Sci-fi',
+    'Sci-Fi',
     'Horror',
+    'TV Shows',
     'Family'
 ]
 
