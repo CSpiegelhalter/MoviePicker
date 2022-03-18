@@ -60,8 +60,8 @@ function ServiceChoice() {
                         <Service
                             icon={item.icon}
                             id={item.id}
-                            onPress={() => console.log(allMovies.allNetflix())}
-                            // onPress={() => editServices(item.id)}
+                            // onPress={() => console.log(allMovies.allNetflix())}
+                            onPress={() => editServices(item.id)}
                         />
                     }
                 />

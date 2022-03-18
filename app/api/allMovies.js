@@ -5,9 +5,8 @@ API.configure(awsconfig)
 
 
 
-const allNetflix = () => {
-
- API.get('netflixmovies', '/netflixmovies')
+const allNetflix = (services, genres) => {
+ API.get('netflixmovies', `/netflixmovies?service=${ services }&genres=${ genres }`)
             .then((data) => {
             console.log('hey bbbbbb');
             console.log(data)

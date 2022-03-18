@@ -3,6 +3,7 @@ import { SafeAreaView, StyleSheet, View, FlatList, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Genres from '../components/Genres';
 import AppText from '../components/AppText';
+import allMovies from '../api/allMovies';
 
 
 const genres = [
@@ -62,7 +63,7 @@ function GenreChoice({ route }) {
                 />
                 <Button
                 title="Next: Choose movies/shows" 
-                onPress={() => console.log(services)}
+                onPress={() => allMovies.allNetflix(services, genreSelect)}
                 />
             </SafeAreaView>
         </ View>
