@@ -8,17 +8,17 @@ import allMovies from '../api/allMovies';
 
 function MovieBrowser({ route }) {
     const navigation = useNavigation();
-    const movies = route.params.services
+    const movies = route.params.movies
 
-    console.log(movies);
+    console.log(Object.keys(movies));
 
-    _renderItem = movies.map((item, index) => {
-        return (
-            <View style={styles.slide}>
-                <Text style={styles.title}>{ item.title }</Text>
-            </View>
-        );
-    })
+    // _renderItem = movies.map((item, index) => {
+    //     return (
+    //         <View style={styles.slide}>
+    //             <Text style={styles.title}>{ item.title }</Text>
+    //         </View>
+    //     );
+    // })
 
     return (
         <View style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', height: '100%' }} >
