@@ -3,6 +3,9 @@ import { SafeAreaView, StyleSheet, View, TouchableWithoutFeedback, FlatList, But
 // import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
 
 function Movie({ url }) {
+
+
+    
     return (
         <>
             <TouchableWithoutFeedback>
