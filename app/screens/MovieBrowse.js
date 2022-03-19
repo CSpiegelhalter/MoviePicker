@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StyleSheet, View, FlatList, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import Movie from '../components/Movie';
 import Genres from '../components/Genres';
 import AppText from '../components/AppText';
 import allMovies from '../api/allMovies';
