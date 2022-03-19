@@ -47,12 +47,12 @@ function GenreChoice({ route }) {
         console.log(genreSelect);
     }
 
-    const onClick =async  () => {
+    const onClick = async () => {
 
-       console.log(await allMovies.allNetflix(services, genreSelect)); 
-         
+        console.log(await allMovies.allNetflix(services, genreSelect));
 
-        
+
+
     }
 
     return (
