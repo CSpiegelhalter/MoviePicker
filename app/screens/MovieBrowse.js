@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SafeAreaView, StyleSheet, View, FlatList, Button } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import Movie from '../components/Movie';
+import Carousel from 'react-native-snap-carousel/src/carousel/Carousel';
 import Genres from '../components/Genres';
 import AppText from '../components/AppText';
 import allMovies from '../api/allMovies';
@@ -9,21 +10,27 @@ import allMovies from '../api/allMovies';
 function MovieBrowser({ route }) {
     const navigation = useNavigation();
     const movies = route.params.movies
-
+    const movieKeys = Object.keys(movies);
     console.log(Object.keys(movies));
 
-    // _renderItem = movies.map((item, index) => {
-    //     return (
-    //         <View style={styles.slide}>
-    //             <Text style={styles.title}>{ item.title }</Text>
-    //         </View>
-    //     );
-    // })
+    var renderItem = movieKeys.map((item, index) => {
+        console.log(movies[item][0]);
+        return (
+            <Movie url={movies[item]['thumbnail']} />
+        );
+    })
 
     return (
         <View style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', height: '100%' }} >
             <SafeAreaView style={styles.container}>
-               
+            <Carousel
+            //   ref={(c) => { this._carousel = c; }}
+              data={movies}
+              renderItem={renderItem}
+              sliderWidth={1000}
+              itemWidth={25}
+              itemHeight={25}
+            />
             </SafeAreaView>
         </ View>
     );
