@@ -49,8 +49,8 @@ function GenreChoice({ route }) {
 
     const onClick = async () => {
 
-        console.log(await allMovies.allNetflix(services, genreSelect));
-
+       const movieList = await allMovies.allNetflix(services, genreSelect)
+       navigation.navigate('MovieBrowser', { movies: movieList })
 
 
     }

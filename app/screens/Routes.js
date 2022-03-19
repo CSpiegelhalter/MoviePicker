@@ -33,17 +33,7 @@ function Routes(props) {
             <NavigationContainer>
                 <Stack.Navigator
                     screenOptions={{ headerTitleAlign: "center" }}>
-                    <Stack.Screen
-                        name="MovieBrowser"
-                        component={MovieBrowser}
-                        options={{
-                            headerTitle: (props) => (
-
-                                <LogoNav {...props} />
-                            )
-                        }
-                        }
-                    />
+                    
                     <Stack.Screen
                         name="ServiceChoice"
                         component={ServiceChoice}
@@ -58,6 +48,17 @@ function Routes(props) {
                     <Stack.Screen
                         name="GenreChoice"
                         component={GenreChoice}
+                        options={{
+                            headerTitle: (props) => (
+
+                                <LogoNav {...props} />
+                            )
+                        }
+                        }
+                    />
+                    <Stack.Screen
+                        name="MovieBrowser"
+                        component={MovieBrowser}
                         options={{
                             headerTitle: (props) => (
 
