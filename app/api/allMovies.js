@@ -5,11 +5,16 @@ API.configure(awsconfig)
 
 
 
-const allNetflix = async (services, genres) => {
-
-    const returnData = await API.get('netflixmovies', `/netflixmovies?service=${services}&genres=${genres}`)
-        
-    return returnData
+const allNetflix = (services, genres) => {
+    let returnData;
+   return API.get('netflixmovies', `/netflixmovies?service=${services}&genres=${genres}`)
+        .then((data) => {
+            returnData = data
+            // console.log(returnData);
+            return data;
+        })
+        // console.log(returnData);
+    // return returnData;
 }
 
 
