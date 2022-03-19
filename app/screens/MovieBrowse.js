@@ -7,9 +7,9 @@ import allMovies from '../api/allMovies';
 
 function MovieBrowser({ route }) {
     const navigation = useNavigation();
-    const services = route.params.services
+    const movies = route.params.services
 
- 
+    console.log(movies);
 
     return (
         <View style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', height: '100%' }} >

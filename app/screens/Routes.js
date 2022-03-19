@@ -8,6 +8,7 @@ import WelcomeScreen from './WelcomeScreen';
 import GenreChoice from './GenreChoice';
 import ServiceChoice from './ServiceChoice';
 import LogoNav from '../components/LogoNav';
+import MovieBrowser from './MovieBrowse';
 
 const Stack = createNativeStackNavigator();
 
@@ -32,7 +33,17 @@ function Routes(props) {
             <NavigationContainer>
                 <Stack.Navigator
                     screenOptions={{ headerTitleAlign: "center" }}>
-                        
+                    <Stack.Screen
+                        name="MovieBrowser"
+                        component={MovieBrowser}
+                        options={{
+                            headerTitle: (props) => (
+
+                                <LogoNav {...props} />
+                            )
+                        }
+                        }
+                    />
                     <Stack.Screen
                         name="ServiceChoice"
                         component={ServiceChoice}
