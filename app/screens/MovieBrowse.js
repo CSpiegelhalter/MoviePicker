@@ -11,26 +11,30 @@ function MovieBrowser({ route }) {
     const navigation = useNavigation();
     const movies = route.params.movies
     const movieKeys = Object.keys(movies);
-    console.log(Object.keys(movies));
+    console.log(movies);
 
-    var renderItem = movieKeys.map((item, index) => {
-        console.log(movies[item][0]);
+    var renderItem = (item, index) => {
+        console.log(movies[item][index]);
         return (
             <Movie url={movies[item]['thumbnail']} />
         );
-    })
+    }
 
     return (
         <View style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', height: '100%' }} >
             <SafeAreaView style={styles.container}>
-            <Carousel
-            //   ref={(c) => { this._carousel = c; }}
-              data={movies}
-              renderItem={renderItem}
-              sliderWidth={1000}
-              itemWidth={25}
-              itemHeight={25}
-            />
+                {movieKeys.map((item, index) => {
+                    <Carousel
+                        //   ref={(c) => { this._carousel = c; }}
+                        data={movies[item]}
+                        renderItem={renderItem}
+                        sliderWidth={1000}
+                        itemWidth={25}
+                        itemHeight={25}
+                    />
+                })
+
+                }
             </SafeAreaView>
         </ View>
     );
