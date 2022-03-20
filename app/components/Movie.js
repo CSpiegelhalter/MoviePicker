@@ -25,6 +25,7 @@ function Movie({ movieArray }) {
                 data={movieArray}
                 renderItem={renderItem}
                 sliderWidth={1000}
+                inactiveSlideShift={0}
                 containerCustomStyle={styles.carouselContainer}
                 itemWidth={ITEM_WIDTH}
             />
@@ -37,6 +38,8 @@ function Movie({ movieArray }) {
 const styles = StyleSheet.create({
 
     carouselContainer: {
+        // width: '100%',
+        // alignSelf: 'flex-end',
         marginTop: 50
     },
     itemContainer: {
@@ -44,7 +47,7 @@ const styles = StyleSheet.create({
         height: ITEM_HEIGHT,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: 'dodgerblue'
+        // backgroundColor: 'dodgerblue'
     },
 })
 
