@@ -16,24 +16,17 @@ function MovieBrowser({ route }) {
     const navigation = useNavigation();
     const movies = route.params.movies
     const movieKeys = Object.keys(movies);
-    console.log(movieKeys);
-    // console.log(movies['Crime'][0]['thumbnail']);
-
-
-
-    
 
     return (
         <View style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', height: '100%' }} >
             <SafeAreaView style={styles.container}>
-            <FlatList
+                <FlatList
                     nestedScrollEnabled={true}
                     data={movieKeys}
                     keyExtractor={movie => movie}
                     renderItem={({ item }) =>
                         <Movie
                             movieArray={movies[item]}
-                            // onPress={() => editServices(item)}
                         />
                     }
                 />
