@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         width: ITEM_WIDTH,
         height: ITEM_HEIGHT,
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
         // backgroundColor: 'dodgerblue'
     },
 })

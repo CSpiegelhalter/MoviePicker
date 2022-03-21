@@ -18,21 +18,22 @@ function MovieBrowser({ route }) {
     const movieKeys = Object.keys(movies);
 
     return (
-        <View style={{ flex: 1, width: '100%', justifyContent: 'center', alignItems: 'center', height: '100%' }} >
-            <SafeAreaView style={styles.container}>
-                <FlatList
-                    nestedScrollEnabled={true}
-                    data={movieKeys}
-                    keyExtractor={movie => movie}
-                    renderItem={({ item }) =>
-                        <Movie
-                            movieArray={movies[item]}
-                        />
-                    }
-                />
 
-            </SafeAreaView>
-        </ View>
+        <SafeAreaView style={styles.container}>
+            <FlatList
+                nestedScrollEnabled={true}
+                data={movieKeys}
+                contentContainerStyle={{ alignItems: 'center', justifyContent: 'center' }}
+                keyExtractor={movie => movie}
+                renderItem={({ item }) =>
+                    <Movie
+                        movieArray={movies[item]}
+                    />
+                }
+            />
+
+        </SafeAreaView>
+
     );
 }
 
@@ -40,9 +41,9 @@ const styles = StyleSheet.create({
 
     container: {
         // width: '100%',
-        height: '100%',
+        // height: '100%',
         // flex: 1,
-        // alignItems: 'flex-end'
+        // alignItems: 'flex-end',
         // flexDirection: 'row'
     }
 })
