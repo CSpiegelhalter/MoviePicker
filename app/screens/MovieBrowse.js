@@ -26,10 +26,12 @@ function MovieBrowser({ route }) {
                 contentContainerStyle={{ margin: 10 }}
                 keyExtractor={(item, index) => String(index)}
                 renderItem={({ item }) =>
-                    <Movie
-                        movieArray={movies[item]}
-                        genre={item}
-                    />
+                    <View style={styles.container}>
+                        <Text>{item}</Text>
+                        <Movie
+                            movieArray={movies[item]}
+                        />
+                    </View>
                 }
             />
 
@@ -41,11 +43,7 @@ function MovieBrowser({ route }) {
 const styles = StyleSheet.create({
 
     container: {
-        // width: '100%',
-        // height: '100%',
-        // flex: 1,
-        // alignItems: 'flex-end',
-        // flexDirection: 'row'
+        marginTop: 50
     }
 })
 
