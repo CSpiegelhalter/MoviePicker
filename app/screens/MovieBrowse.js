@@ -28,6 +28,7 @@ function MovieBrowser({ route }) {
                 renderItem={({ item }) =>
                     <Movie
                         movieArray={movies[item]}
+                        genre={item}
                     />
                 }
             />
