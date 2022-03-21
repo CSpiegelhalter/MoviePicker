@@ -23,8 +23,8 @@ function MovieBrowser({ route }) {
             <FlatList
                 nestedScrollEnabled={true}
                 data={movieKeys}
-                contentContainerStyle={{  }}
-                keyExtractor={movie => movie}
+                contentContainerStyle={{ margin: 10 }}
+                keyExtractor={(item, index) => String(index)}
                 renderItem={({ item }) =>
                     <Movie
                         movieArray={movies[item]}
