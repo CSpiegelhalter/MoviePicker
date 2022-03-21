@@ -24,10 +24,11 @@ function Movie({ movieArray }) {
             <Carousel
                 data={movieArray}
                 renderItem={renderItem}
-                sliderWidth={1000}
+                sliderWidth={SLIDER_WIDTH}
                 inactiveSlideShift={0}
-                containerCustomStyle={styles.carouselContainer}
+                contentContainerStyle={styles.carouselContainer}
                 itemWidth={ITEM_WIDTH}
+                useScrollView={true}   
             />
 
 
@@ -40,14 +41,17 @@ const styles = StyleSheet.create({
     carouselContainer: {
         // width: '100%',
         // alignSelf: 'flex-end',
+        flex: 1,
+        left:0,
+        // justifyContent: '',
         marginTop: 50
     },
     itemContainer: {
         width: ITEM_WIDTH,
         height: ITEM_HEIGHT,
-        alignItems: 'center',
-        justifyContent: 'center'
-        // backgroundColor: 'dodgerblue'
+        // alignItems: 'center',
+        // justifyContent: 'center'
+        backgroundColor: 'dodgerblue'
     },
 })
 
