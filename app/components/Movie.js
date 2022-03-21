@@ -62,6 +62,7 @@ const styles = StyleSheet.create({
         width: ITEM_WIDTH,
         height: ITEM_HEIGHT,
         margin: 10,
+        marginTop: 50
         // alignItems: 'center',
         // justifyContent: 'center'
         // backgroundColor: 'dodgerblue'
