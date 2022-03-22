@@ -20,7 +20,7 @@
           "host": "moivepicker-dev.clgftnbfrrf4.us-east-1.rds.amazonaws.com",
           "port": "3306",
           "deploymentBucketName": "amplify-amplify2f501346b37b4-staging-21129-deployment",
-          "s3Key": "amplify-builds/netflixmovies-485a30504a6c586c2b4e-build.zip"
+          "s3Key": "amplify-builds/netflixmovies-6f316c794c4c74454672-build.zip"
         },
         "amazonmovies": {
           "deploymentBucketName": "amplify-amplify2f501346b37b4-staging-21129-deployment",

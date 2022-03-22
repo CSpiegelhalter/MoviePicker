@@ -29,6 +29,8 @@ exports.handler = async (event, context, callback) => {
       const returnData = await db[hold].findAll({
         order: db.sequelize.random(),
         limit: 10,
+        benchmark: true,
+        logging: console.log,
         where: {
           genres: db.sequelize.where(db.sequelize.fn('LOWER', db.sequelize.col('genres')), 'LIKE', '%' + genreList[j] + '%')
         }
