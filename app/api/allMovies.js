@@ -9,6 +9,7 @@ const allNetflix = (services, genres) => {
 
     return API.get('netflixmovies', `/netflixmovies?service=${services}&genres=${genres}`)
         .then((data) => {
+            console.log(data);
             return data;
         })
 }

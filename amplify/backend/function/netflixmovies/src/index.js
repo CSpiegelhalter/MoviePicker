@@ -17,6 +17,7 @@ const db = require('/opt/dbConnection')
 
 
 exports.handler = async (event, context, callback) => {
+  const Op = db.Sequelize.Op;
   let movieDate = {}
   let service = event.queryStringParameters.service
   let genreList = event.queryStringParameters.genres
@@ -39,19 +40,21 @@ exports.handler = async (event, context, callback) => {
   }
 
   let condition = {
-    [Op.and]: {
-      [Op.or]: ServiceConditionalArray,
-      [Op.or]: GenreConditionalArray
-    }
+    [Op.or]: ServiceConditionalArray,
     
   }
+  // [Op.and]: {
+  //   [Op.or]: ServiceConditionalArray,
+  //   [Op.or]: GenreConditionalArray
+  // }
 
   const returnData = await db.netflixMovies.findAll({
           order: db.sequelize.random(),
           limit: 10,
           benchmark: true,
           logging: console.log,
-          where: condition
+          where: condition,
+          group: ['genres']
         })
 
 
