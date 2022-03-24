@@ -57,6 +57,7 @@ exports.handler = async (event, context, callback) => {
           group: ['genres']
         })
 
+  console.log(returnData);
 
   // for (let i = 0; i <= service.length - 1; i++) {
   //   for (let j = 0; j <= genreList.length - 1; j++) {
@@ -81,6 +82,6 @@ exports.handler = async (event, context, callback) => {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Headers": "*"
     },
-    body: JSON.stringify(movieDate),
+    body: JSON.stringify(returnData),
   };
 };

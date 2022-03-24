@@ -8,23 +8,23 @@ import Service from '../components/Service';
 const icons = [
     {
         icon: require('../assets/netflixlogo.png'),
-        id: 'netflixMovies'
+        id: 'netflix'
     },
     {
         icon: require('../assets/disney_plus.jpg'),
-        id: 'disneyMovies'
+        id: 'disney-plus'
     },
     {
         icon: require('../assets/HBO.jpg'),
-        id: 'hboMovies'
+        id: 'hbo-max'
     },
     {
         icon: require('../assets/hulu.jpg'),
-        id: 'huluMovies'
+        id: 'hulu'
     },
     {
         icon: require('../assets/amazonprime.jpg'),
-        id: 'amazonMovies'
+        id: 'amazon-prime-video'
     }
 ]
 
